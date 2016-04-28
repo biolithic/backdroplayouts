@@ -66,24 +66,24 @@
     <div class="container-fluid">
       <?php if (!empty($content['top'])): ?>
         <div class="row">
-          <div class="col-md-12 l-topcolumn panel-panel">
+          <div class="col-md-12 l-topcolumn">
             <?php print $content['top']; ?>
           </div>
         </div>
       <?php endif; ?>
 
       <div class="row">
-        <div class="col-md-9 l-contentcolumn panel-panel">
+        <div class="col-md-9 l-contentcolumn">
           <?php print $content['content']; ?>
         </div>
-        <div class="col-md-3 l-sidebar panel-panel">
+        <div class="col-md-3 l-sidebar">
           <?php print $content['sidebar']; ?>
         </div>
       </div>
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="row">
-          <div class="col-md-12 l-bottom panel-panel">
+          <div class="col-md-12 l-bottom">
             <?php print $content['bottom']; ?>
           </div>
         </div>

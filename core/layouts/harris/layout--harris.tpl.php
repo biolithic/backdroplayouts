@@ -67,27 +67,27 @@
     <div class="container-fluid">
       <?php if (!empty($content['top'])): ?>
         <div class="row">
-          <div class="col-md-12 l-headercolumn panel-panel">
+          <div class="col-md-12 l-headercolumn">
             <?php print $content['top']; ?>
           </div>
         </div>
       <?php endif; ?>
 
       <div class="row">
-        <div class="col-md-3 l-column1 panel-panel">
+        <div class="col-md-3 l-column1">
           <?php print $content['column1']; ?>
         </div>
-        <div class="col-md-6 l-contentcolumn panel-panel">
+        <div class="col-md-6 l-contentcolumn">
           <?php print $content['content']; ?>
         </div>
-        <div class="col-md-3 l-column2 panel-panel">
+        <div class="col-md-3 l-column2">
           <?php print $content['column2']; ?>
         </div>
       </div>
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="row">
-          <div class="col-md-12 l-bottom panel-panel">
+          <div class="col-md-12 l-bottom">
             <?php print $content['bottom']; ?>
           </div>
         </div>

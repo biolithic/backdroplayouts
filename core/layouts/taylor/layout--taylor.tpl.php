@@ -25,7 +25,6 @@
  *   - $content['footer']
  */
 ?>
-
 <div class="layout--taylor <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
@@ -71,24 +70,24 @@
 
     <?php if ($content['top1']): ?>
         <div class="row">
-          <section class="col-md-12 l-top l-top1 column panel-panel" role="region">
+          <section class="col-md-12 l-top l-top1 column" role="region">
             <?php print $content['top1']; ?>
         </section>
       </div>
     <?php endif; ?>
 
       <div class="row">
-        <main class="col-md-6 l-content column main panel-panel" role="main" aria-label="<?php print t('Main content'); ?>">
+        <main class="col-md-6 l-content column main" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php if ($content['content']): ?>
           <?php print $content['content']; ?>
           <?php endif; ?>
         </main>
-        <aside class="col-md-3 l-sidebar l-sidebar1 panel-panel" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+        <aside class="col-md-3 l-sidebar l-sidebar1" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
           <?php if ($content['sidebar1']): ?>
           <?php print $content['sidebar1']; ?>
           <?php endif; ?>
         </aside>
-        <aside class="col-md-3 l-sidebar l-sidebar2 panel-panel" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+        <aside class="col-md-3 l-sidebar l-sidebar2" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
           <?php if ($content['sidebar2']): ?>
           <?php print $content['sidebar2']; ?>
           <?php endif; ?>
@@ -97,7 +96,7 @@
 
     <?php if ($content['bottom1']): ?>
         <div class="row">
-          <div class="col-md-12 l-bottom l-bottom1 panel-panel">
+          <div class="col-md-12 l-bottom l-bottom1">
             <?php print $content['bottom1']; ?>
           </div>
         </div>
