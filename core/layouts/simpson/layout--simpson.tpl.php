@@ -16,9 +16,9 @@
  * - $content: An array of content, each item in the array is keyed to one
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
- *   - $content['top1']
- *   - $content['sidebar1']
+ *   - $content['top']
  *   - $content['content']
+ *   - $content['sidebar1']
  *   - $content['sidebar2']
  *   - $content['triptych1']
  *   - $content['triptych2']
@@ -27,7 +27,6 @@
  *   - $content['quarter2']
  *   - $content['quarter3']
  *   - $content['quarter4']
- *   - $content['calltoaction']
  *   - $content['footer']
  */
 ?>
@@ -75,41 +74,41 @@
 
     <?php print $action_links; ?>
 
-    <?php if ($content['top1']): ?>
-        <div class="row">
-          <section class="col-md-12 l-top l-top1 column panel-panel" role="region">
-            <?php print $content['top1']; ?>
+    <?php if ($content['top']): ?>
+      <div class="row">
+        <section class="l-top" role="region">
+          <?php print $content['top']; ?>
         </section>
       </div>
     <?php endif; ?>
 
-    <div class="row">
-        <aside class="col-md-3 l-sidebar l-sidebar1 panel-panel" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+      <div class="row">
+        <div class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
           <?php if ($content['sidebar1']): ?>
           <?php print $content['sidebar1']; ?>
           <?php endif; ?>
-        </aside>
-        <main class="col-md-6 l-content column main panel-panel" role="main" aria-label="<?php print t('Main content'); ?>">
+        </div>
+        <main class="l-content col-md-6" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php if ($content['content']): ?>
           <?php print $content['content']; ?>
           <?php endif; ?>
         </main>
-        <aside class="col-md-3 l-sidebar l-sidebar2 panel-panel" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+        <div class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
           <?php if ($content['sidebar2']): ?>
           <?php print $content['sidebar2']; ?>
           <?php endif; ?>
-        </aside>
+        </div>
       </div>
 
       <?php if ($content['triptych1'] || $content['triptych2'] || $content['triptych3']): ?>
         <section class="l-triptych row" role="region">
-          <div class="col-md-4 l-triptych1 panel-panel">
+          <div class="col-md-4">
             <?php print $content['triptych1']; ?>
           </div>
-          <div class="col-md-4 l-triptych2 panel-panel">
+          <div class="col-md-4">
             <?php print $content['triptych2']; ?>
           </div>
-          <div class="col-md-4 l-triptych3 panel-panel">
+          <div class="col-md-4">
             <?php print $content['triptych3']; ?>
           </div>
         </section>
@@ -117,31 +116,21 @@
 
       <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
         <section class="l-quarter row" role="region">
-          <div class="col-md-3 l-quarter1 panel-panel">
+          <div class="col-md-3">
             <?php print $content['quarter1']; ?>
           </div>
-          <div class="col-md-3 l-quarter2 panel-panel">
+          <div class="col-md-3">
             <?php print $content['quarter2']; ?>
           </div>
-          <div class="col-md-3 l-quarter3 panel-panel">
+          <div class="col-md-3">
             <?php print $content['quarter3']; ?>
           </div>
-          <div class="col-md-3 l-quarter4 panel-panel">
+          <div class="col-md-3">
             <?php print $content['quarter4']; ?>
           </div>
         </section>
       <?php endif; ?>
     </div>
-
-  <?php if ($content['calltoaction']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <footer class="l-calltoaction col-md-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
-          <?php print $content['calltoaction']; ?>
-        </footer>
-      </div>
-    </div>
-  <?php endif; ?>
 
   <?php if ($content['footer']): ?>
     <div class="container-fluid">
