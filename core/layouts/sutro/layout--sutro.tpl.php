@@ -26,7 +26,6 @@
  *
  */
 ?>
-
 <div class="layout--sutro <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
@@ -72,7 +71,7 @@
 
     <?php if ($content['top1']): ?>
         <div class="row">
-          <section class="col-md-12 l-top l-top1 column panel-panel" role="region">
+          <section class="col-md-12 l-top l-top1 column" role="region">
             <?php print $content['top1']; ?>
           </section>
         </div>
@@ -80,7 +79,7 @@
 
     <?php if ($content['content']): ?>
         <div class="row">
-          <main class="col-md-12 l-content column main panel-panel" role="main" aria-label="<?php print t('Main content'); ?>">
+          <main class="col-md-12 l-content column main" role="main" aria-label="<?php print t('Main content'); ?>">
             <?php print $content['content']; ?>
           </main>
         </div>
@@ -88,10 +87,10 @@
 
       <?php if ($content['double1'] || $content['double2']): ?>
         <section class="l-double row" role="region">
-          <div class="col-md-6 l-double1 panel-panel">
+          <div class="col-md-6 l-double1">
             <?php print $content['double1']; ?>
           </div>
-          <div class="col-md-6 l-double2 panel-panel">
+          <div class="col-md-6 l-double2">
             <?php print $content['double2']; ?>
           </div>
         </section>
@@ -99,7 +98,7 @@
 
       <?php if ($content['bottom1']): ?>
         <div class="row">
-          <div class="col-md-12 l-bottom l-bottom1 panel-panel">
+          <div class="col-md-12 l-bottom l-bottom1">
             <?php print $content['bottom1']; ?>
           </div>
         </div>
