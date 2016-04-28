@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for the Bryant Flipped layout.
+ * Template for the Moscone layout.
  *
  * Variables:
  * - $title: The page title, for use in the actual HTML content.
@@ -16,38 +16,35 @@
  * - $content: An array of content, each item in the array is keyed to one
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
+ *   - $content['top']
+ *   - $content['sidebar']
  *   - $content['content']
- *   - $content['sidebar1']
- *   - $content['calltoaction']
+ *   - $content['bottom']
  *   - $content['footer']
  */
 ?>
-
-<div class="layout--bryant-flipped <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
+<div class="layout--moscone <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="container-fluid">
-        <div class="row">
+      <div class="container">
         <?php print $content['header']; ?>
-        </div>
       </div>
     </header>
   <?php endif; ?>
 
   <?php if ($messages): ?>
-    <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
+    <div class="l-messages container">
       <?php print $messages; ?>
     </div>
   <?php endif; ?>
 
   <div class="l-container">
-
-    <div class="l-container-inner container-fluid">
-      <div class="l-page-header row">
+  <div class="l-container-inner container">
+    <div class="l-page-header">
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -59,48 +56,48 @@
     </div>
 
     <?php if ($tabs): ?>
-      <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+      <div class="tabs">
         <?php print $tabs; ?>
-      </nav>
+      </div>
     <?php endif; ?>
 
     <?php print $action_links; ?>
 
-      <div class="row">
-        <main class="col-md-9 l-content column main panel-panel" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php if ($content['content']): ?>
-          <?php print $content['content']; ?>
-          <?php endif; ?>
-        </main>
-
-        <aside class="col-md-3 l-sidebar l-sidebar1 panel-panel" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar1']): ?>
-          <?php print $content['sidebar1']; ?>
-          <?php endif; ?>
-        </aside>
-      </div>
-
-  </div>
-
-  <?php if ($content['calltoaction']): ?>
     <div class="container-fluid">
+      <?php if (!empty($content['top'])): ?>
+        <div class="row">
+          <div class="col-md-12 l-topcolumn panel-panel">
+            <?php print $content['top']; ?>
+          </div>
+        </div>
+      <?php endif; ?>
+
       <div class="row">
-        <footer class="l-calltoaction col-md-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
-          <?php print $content['calltoaction']; ?>
-        </footer>
+        <div class="col-md-3 l-sidebar panel-panel">
+          <?php print $content['sidebar']; ?>
+        </div>
+        <div class="col-md-9 l-contentcolumn panel-panel">
+          <?php print $content['content']; ?>
+        </div>
       </div>
+
+      <?php if (!empty($content['bottom'])): ?>
+        <div class="row">
+          <div class="col-md-12 l-bottom panel-panel">
+            <?php print $content['bottom']; ?>
+          </div>
+        </div>
+      <?php endif; ?>
     </div>
-  <?php endif; ?>
+  </div>
+  </div>
 
   <?php if ($content['footer']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <footer class="l-footer col-md-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
-          <?php print $content['footer']; ?>
-        </footer>
+    <footer class="l-footer"  role="footer">
+      <div class="container">
+        <?php print $content['footer']; ?>
       </div>
-    </div>
+    </footer>
   <?php endif; ?>
+</div><!-- /.moscone -->
 
-  </div>
-</div><!-- /.bryant-flipped -->
