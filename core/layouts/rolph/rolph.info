@@ -5,16 +5,25 @@ type = layout
 
 ; Specify regions for this layout.
 regions[header]           = Header
-regions[top]              = Top
-regions[quarter1]         = Quarter 1 Column
-regions[quarter2]         = Quarter 2 Column
-regions[quarter3]         = Quarter 1 Column
-regions[quarter4]         = Quarter 2 Column
-regions[bottom]           = Bottom
+regions[top1]             = Top
+regions[content]          = Content
+regions[quarter1]         = First Column
+regions[quarter2]         = Second Column
+regions[quarter3]         = Third Column
+regions[quarter4]         = Fourth Column
+regions[calltoaction]     = Call To Action
+regions[bottom1]          = Bottom
 regions[footer]           = Footer
+
+; The default region automatically receives the "Main Content" block if needed.
+; Modify this line if you would like to change the default in this layout.
+default region = content
 
 ; Preview
 preview = rolph.png
 
 ; Default stylesheets
 stylesheets[all][] = ../bootstrap-grid.css
+
+; Include file for special preprocessing of this layout's variables.
+; file = rolph.php

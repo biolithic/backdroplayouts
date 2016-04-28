@@ -1,25 +1,33 @@
-name = Whelan
+name = Simpson
 version = BACKDROP_VERSION
 backdrop = 1.x
 type = layout
 
 ; Specify regions for this layout.
-regions[header]  = Header
-regions[sidebar1]  = First Sidebar
+regions[header] = Header
+regions[top1] = Top
+regions[sidebar1] = First Sidebar
 regions[content] = Content
-regions[sidebar2]  = Second Sidebar
+regions[sidebar2] = Second Sidebar
+regions[triptych1] = First Column
+regions[triptych2] = Second Column
+regions[triptych3] = Third Column
+regions[quarter1]  = First Column
+regions[quarter2]  = Second Column
+regions[quarter3]  = Third Column
+regions[quarter4]  = Fourth Column
 regions[calltoaction] = Call To Action
-regions[footer]  = Footer
+regions[footer] = Footer bottom
 
 ; The default region automatically receives the "Main Content" block if needed.
 ; Modify this line if you would like to change the default in this layout.
 default region = content
 
 ; Preview
-preview = whelan.png
+preview = simpson.png
 
 ; Default stylesheets
 stylesheets[all][] = ../bootstrap-grid.css
 
 ; Include file for special preprocessing of this layout's variables.
-; file = whelan.php
+file = simpson.php

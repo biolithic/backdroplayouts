@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for the Rolph layout.
+ * Template for the Simpson layout.
  *
  * Variables:
  * - $title: The page title, for use in the actual HTML content.
@@ -17,18 +17,22 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['top1']
+ *   - $content['sidebar1']
  *   - $content['content']
+ *   - $content['sidebar2']
+ *   - $content['triptych1']
+ *   - $content['triptych2']
+ *   - $content['triptych3']
  *   - $content['quarter1']
  *   - $content['quarter2']
  *   - $content['quarter3']
  *   - $content['quarter4']
  *   - $content['calltoaction']
- *   - $content['bottom1']
  *   - $content['footer']
  */
 ?>
 
-<div class="layout--rolph <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
+<div class="layout--simpson <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
@@ -75,17 +79,41 @@
         <div class="row">
           <section class="col-md-12 l-top l-top1 column panel-panel" role="region">
             <?php print $content['top1']; ?>
-          </section>
-        </div>
-      <?php endif; ?>
-
-    <?php if ($content['content']): ?>
-        <div class="row">
-          <main class="col-md-12 l-content column main panel-panel" role="main" aria-label="<?php print t('Main content'); ?>">
-            <?php print $content['content']; ?>
-          </main>
-        </div>
+        </section>
+      </div>
     <?php endif; ?>
+
+    <div class="row">
+        <aside class="col-md-3 l-sidebar l-sidebar1 panel-panel" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+          <?php if ($content['sidebar1']): ?>
+          <?php print $content['sidebar1']; ?>
+          <?php endif; ?>
+        </aside>
+        <main class="col-md-6 l-content column main panel-panel" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php if ($content['content']): ?>
+          <?php print $content['content']; ?>
+          <?php endif; ?>
+        </main>
+        <aside class="col-md-3 l-sidebar l-sidebar2 panel-panel" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+          <?php if ($content['sidebar2']): ?>
+          <?php print $content['sidebar2']; ?>
+          <?php endif; ?>
+        </aside>
+      </div>
+
+      <?php if ($content['triptych1'] || $content['triptych2'] || $content['triptych3']): ?>
+        <section class="l-triptych row" role="region">
+          <div class="col-md-4 l-triptych1 panel-panel">
+            <?php print $content['triptych1']; ?>
+          </div>
+          <div class="col-md-4 l-triptych2 panel-panel">
+            <?php print $content['triptych2']; ?>
+          </div>
+          <div class="col-md-4 l-triptych3 panel-panel">
+            <?php print $content['triptych3']; ?>
+          </div>
+        </section>
+      <?php endif; ?>
 
       <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
         <section class="l-quarter row" role="region">
@@ -103,15 +131,7 @@
           </div>
         </section>
       <?php endif; ?>
-
-      <?php if ($content['bottom1']): ?>
-        <div class="row">
-          <div class="col-md-12 l-bottom l-bottom1 panel-panel">
-            <?php print $content['bottom1']; ?>
-          </div>
-        </div>
-      <?php endif; ?>
-</div>
+    </div>
 
   <?php if ($content['calltoaction']): ?>
     <div class="container-fluid">
@@ -134,4 +154,4 @@
   <?php endif; ?>
 
   </div>
-</div><!-- /.rolph -->
+</div><!-- /.simpson -->

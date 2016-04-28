@@ -17,10 +17,12 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['content']
- *   - $content['sidebar']
+ *   - $content['sidebar1']
+ *   - $content['calltoaction']
  *   - $content['footer']
  */
 ?>
+
 <div class="layout--bryant-flipped <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
@@ -28,21 +30,24 @@
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="container">
+      <div class="container-fluid">
+        <div class="row">
         <?php print $content['header']; ?>
+        </div>
       </div>
     </header>
   <?php endif; ?>
 
   <?php if ($messages): ?>
-    <div class="l-messages container">
+    <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
       <?php print $messages; ?>
     </div>
   <?php endif; ?>
 
   <div class="l-container">
-  <div class="l-container-inner container">
-    <div class="l-page-header">
+
+    <div class="l-container-inner container-fluid">
+      <div class="l-page-header row">
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -54,31 +59,48 @@
     </div>
 
     <?php if ($tabs): ?>
-      <div class="tabs">
+      <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
         <?php print $tabs; ?>
-      </div>
+      </nav>
     <?php endif; ?>
 
     <?php print $action_links; ?>
 
-    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-9 l-contentcolumn panel-panel">
+        <main class="col-md-9 l-content column main panel-panel" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php if ($content['content']): ?>
           <?php print $content['content']; ?>
-        </div>
-        <div class="col-md-3 l-sidebar panel-panel">
-          <?php print $content['sidebar']; ?>
-        </div>
+          <?php endif; ?>
+        </main>
+
+        <aside class="col-md-3 l-sidebar l-sidebar1 panel-panel" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+          <?php if ($content['sidebar1']): ?>
+          <?php print $content['sidebar1']; ?>
+          <?php endif; ?>
+        </aside>
       </div>
-    </div>
-  </div>
+
   </div>
 
-  <?php if ($content['footer']): ?>
-    <footer class="l-footer"  role="footer">
-      <div class="container">
-        <?php print $content['footer']; ?>
+  <?php if ($content['calltoaction']): ?>
+    <div class="container-fluid">
+      <div class="row">
+        <footer class="l-calltoaction col-md-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
+          <?php print $content['calltoaction']; ?>
+        </footer>
       </div>
-    </footer>
+    </div>
   <?php endif; ?>
+
+  <?php if ($content['footer']): ?>
+    <div class="container-fluid">
+      <div class="row">
+        <footer class="l-footer col-md-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
+          <?php print $content['footer']; ?>
+        </footer>
+      </div>
+    </div>
+  <?php endif; ?>
+
+  </div>
 </div><!-- /.bryant-flipped -->
