@@ -52,34 +52,34 @@
   <?php endif; ?>
 
   <div class="l-container">
-
     <div class="l-container-inner container-fluid">
+
       <div class="l-page-header row">
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-    </div>
-
-    <?php if ($tabs): ?>
-      <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
-        <?php print $tabs; ?>
-      </nav>
-    <?php endif; ?>
-
-    <?php print $action_links; ?>
-
-    <?php if ($content['top']): ?>
-      <div class="row">
-        <div class="l-top col-md-12" role="region">
-          <?php print $content['top']; ?>
-        </div>
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title">
+            <?php print $title; ?>
+          </h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
       </div>
-    <?php endif; ?>
+
+      <?php if ($tabs): ?>
+        <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+          <?php print $tabs; ?>
+        </nav>
+      <?php endif; ?>
+
+      <?php print $action_links; ?>
+
+      <?php if ($content['top']): ?>
+        <div class="row">
+          <div class="l-top col-md-12" role="region">
+            <?php print $content['top']; ?>
+          </div>
+        </div>
+      <?php endif; ?>
 
       <div class="row">
         <div class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
@@ -131,15 +131,15 @@
       <?php endif; ?>
     </div>
 
-  <?php if ($content['footer']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <footer class="l-footer col-md-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
-          <?php print $content['footer']; ?>
-        </footer>
+    <?php if ($content['footer']): ?>
+      <div class="container-fluid">
+        <div class="row">
+          <footer class="l-footer col-md-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
+            <?php print $content['footer']; ?>
+          </footer>
+        </div>
       </div>
-    </div>
-  <?php endif; ?>
+    <?php endif; ?>
 
   </div>
 </div><!-- /.simpson -->
