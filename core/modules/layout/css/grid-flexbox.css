@@ -1807,8 +1807,7 @@
 .grid-container,
 .grid-container-static,
 .grid-container-fluid,
-.site-width-wrapper,
-.layout {
+.site-width-wrapper {
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.75rem;
