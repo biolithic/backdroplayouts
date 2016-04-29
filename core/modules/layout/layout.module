@@ -1135,6 +1135,7 @@ function layout_get_layout_info($layout_name = NULL) {
       $info[$name] += array(
         'hidden' => FALSE,
         'preview' => 'preview.png',
+        'default region' => 'content',
         'stylesheets' => array(
           'all' => array(str_replace('_', '-', $name) . '.css'),
         ),
