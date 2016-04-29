@@ -1,0 +1,435 @@
+* {
+  box-sizing: border-box;
+}
+
+#check-font-wrapper {
+  position: absolute; /* @todo make this update to core */
+}
+
+.admin-bar {
+  /* Dodge admin bar */
+  min-height: calc(100vh - 38px); /* @todo add class for mobile admin bar */
+}
+
+.admin-bar body {
+  border: 0!important;/* Remove !important from admin-menu */
+  padding-top: 38px;
+}
+
+.l-header {
+  position: relative;
+  margin: 0 0 2rem;
+}
+
+@media (min-width: 35em) {
+  .l-header-innermost-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    min-height: 6.125rem;
+  }
+}
+
+.l-header .block,
+.l-header .block > div,
+/* @todo Want to disable header menu and remove from core */
+.l-header .header-menu {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.l-header .block,
+.l-header .block > div,
+/* @todo Want to disable header menu and remove from core */
+.l-header .header-menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+@media (min-width: 35em) {
+.l-header .block,
+.l-header .block > div,
+/* @todo Want to disable header menu and remove from core */
+.l-header .header-menu {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+.l-header .block,
+.l-header .header-menu .links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media (min-width: 35em) {
+  .l-header .header-menu .links {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .block-system-header,
+  .block-system-header .block-content {
+    position: static;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.header-identity-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 1rem 0 0;
+}
+
+@media (min-width: 35em) {
+  .header-identity-wrapper {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+}
+
+.header-logo-wrapper {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+/* @todo Add class for tall or wide logo */
+.header-logo-link {
+  display: block;
+  min-width: 4em;
+  max-width: 6rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 1.25rem 0;
+}
+
+.header-name-and-slogan-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.header-site-name-link {
+  display: block;
+}
+
+.header-site-name-wrapper {
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 35em) {
+  .header-site-name-wrapper {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 55em) {
+  .header-site-name-wrapper {
+    font-size: 1.75em;
+  }
+}
+
+.header-site-name-link {
+  display: inline-block;
+  margin: 0 -1rem;
+  padding: 0.75rem 1rem 0.75rem;
+}
+
+@media (min-width: 35em) {
+  .header-site-name-link {
+    padding-top: 1.25rem;
+    margin-left: -1rem;
+  }
+}
+
+.header-site-slogan {
+  margin: -0.75em 0 0;
+  padding: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 35em) {
+  .header-menu {
+    min-width: 30%;
+  }
+}
+
+@media (min-width: 55em) {
+  .header-menu {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 35em) {
+  .l-header .block-system-header {
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+  }
+
+  /* Specific selector to avoid contextual links */
+  .l-header .block-system-main-menu .block-content .menu,
+  .l-header .header-menu .menu {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  /* Specific selector to avoid contextual links */
+  .l-header .block-system-main-menu .block-content a,
+  .l-header .header-menu a {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.l-header .menu,
+.l-header .leaf {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.l-header .leaf,
+.header-menu li {
+  font-size: 1em;
+}
+
+@media (min-width: 35em) {
+  .l-header .leaf,
+  .header-menu li {
+    font-size: 1.125em;
+  }
+}
+@media (min-width: 55em) {
+  .l-header .leaf,
+  .header-menu li {
+    font-size: 1.375em;
+  }
+}
+
+.l-header .leaf a,
+.header-menu a {
+  display: inline-block;
+  padding: 0.6em 1em;
+}
+
+.l-header .menu,
+.header-menu .links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.header-menu .links {
+  -webkit-box-pack: flex-end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+}
+
+.header-menu .links,
+.header-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.l-header .block-system-user-menu .leaf {
+  float: none;
+}
+
+.header-menu .links li:before,
+.header-menu .links li:after {
+  display: none;
+}
+
+.l-header .block-system-user-menu .menu {
+  display: block;
+}
+
+@media (min-width: 35em) {
+  .l-header .block-system-user-menu .leaf {
+    font-size: 0.875rem;
+    float: left;
+    margin: 0 0.5rem 0 0;
+  }
+
+  .l-header .block-system-user-menu .leaf:first-child {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  .l-header .block-system-user-menu .leaf a {
+    padding: 0.5rem 0.5rem 0.25rem;
+  }
+}
+
+.layout .l-messages {
+  padding: 0 2rem 2rem;
+}
+
+.l-footer {
+  margin: 1.5rem 0 0;
+}
+
+.l-footer .block-system-powered-by {
+  padding: 0 0 0 2rem;
+}
+
+/**
+ * Breadcrumbs
+ */
+.breadcrumb ol,
+.breadcrumb li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li {
+  float: left;
+}
+
+.breadcrumb li a {
+  display: block;
+  padding: 0.5rem 0.8rem;
+}
+
+/**
+ * Flex Gallery
+ */
+.flex-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-gallery-item {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-gallery-item {
+  max-width: 100%;
+  padding: 0 1em 1em 0;
+}
+
+/**
+ * Teasers
+ */
+.view-mode-teaser {
+  margin: 2rem 0 0;
+  padding: 2rem 0 0;
+}
+
+.view-mode-teaser:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.view-mode-teaser + .view-mode-teaser {
+  border-top: 0.25rem solid #c6cad2;
+}
+
+.view-mode-teaser h1,
+.view-mode-teaser h2,
+.view-mode-teaser h3,
+.view-mode-teaser h4,
+.view-mode-teaser h5,
+.view-mode-teaser h6 {
+  margin: 0 0 0.5rem;
+}
+
+.view-mode-teaser .align-right {
+  margin: 0 0 1.5rem 1.5rem;
+}
+
+.view-mode-teaser p {
+  margin: 0 0 0.5rem;
+}
+
+.view-mode-teaser .content {
+  margin: 0 0 1.5rem;
+}
