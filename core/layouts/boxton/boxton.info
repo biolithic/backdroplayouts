@@ -4,13 +4,11 @@ backdrop = 1.x
 type = layout
 
 ; Specify regions for this layout.
-regions[header] = Header
-regions[content] = Content
-regions[calltoaction] = Call To Action
-regions[footer] = Footer
+regions[header]     = Header
+regions[content]    = Content
+regions[footer]     = Footer
 
 ; The default region automatically receives the "Main Content" block if needed.
-; Modify this line if you would like to change the default in this layout.
 default region = content
 
 ; Preview
@@ -19,5 +17,3 @@ preview = boxton.png
 ; Default stylesheets
 stylesheets[all][] = ../bootstrap-grid.css
 
-; Include file for special preprocessing of this layout's variables.
-; file = boxton.php

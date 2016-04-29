@@ -16,12 +16,11 @@
  * - $content: An array of content, each item in the array is keyed to one
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
- *   - $content['top1']
+ *   - $content['top']
  *   - $content['content']
- *   - $content['sidebar1']
+ *   - $content['sidebar']
  *   - $content['sidebar2']
- *   - $content['calltoaction']
- *   - $content['bottom1']
+ *   - $content['bottom']
  *   - $content['footer']
  */
 ?>
@@ -68,50 +67,40 @@
 
     <?php print $action_links; ?>
 
-    <?php if ($content['top1']): ?>
+    <?php if ($content['top']): ?>
         <div class="row">
-          <section class="col-md-12 l-top l-top1 column" role="region">
-            <?php print $content['top1']; ?>
+          <section class="l-top col-md-12" role="region">
+            <?php print $content['top']; ?>
         </section>
       </div>
     <?php endif; ?>
 
       <div class="row">
-        <main class="col-md-6 l-content column main" role="main" aria-label="<?php print t('Main content'); ?>">
+        <main class="col-md-6 l-content main" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php if ($content['content']): ?>
           <?php print $content['content']; ?>
           <?php endif; ?>
         </main>
-        <aside class="col-md-3 l-sidebar l-sidebar1" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar1']): ?>
-          <?php print $content['sidebar1']; ?>
+        <aside class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+          <?php if ($content['sidebar']): ?>
+          <?php print $content['sidebar']; ?>
           <?php endif; ?>
         </aside>
-        <aside class="col-md-3 l-sidebar l-sidebar2" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+        <aside class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
           <?php if ($content['sidebar2']): ?>
           <?php print $content['sidebar2']; ?>
           <?php endif; ?>
         </aside>
       </div>
 
-    <?php if ($content['bottom1']): ?>
-        <div class="row">
-          <div class="col-md-12 l-bottom l-bottom1">
-            <?php print $content['bottom1']; ?>
-          </div>
-        </div>
-    <?php endif; ?>
-    </div>
-
-  <?php if ($content['calltoaction']): ?>
-    <div class="container-fluid">
+    <?php if ($content['bottom']): ?>
       <div class="row">
-        <footer class="l-calltoaction col-md-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
-          <?php print $content['calltoaction']; ?>
-        </footer>
+        <div class="l-bottom col-md-12">
+          <?php print $content['bottom']; ?>
+        </div>
       </div>
-    </div>
-  <?php endif; ?>
+    <?php endif; ?>
+  </div>
 
   <?php if ($content['footer']): ?>
     <div class="container-fluid">

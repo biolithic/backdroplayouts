@@ -18,11 +18,11 @@
  *   - $content['header']
  *   - $content['top']
  *   - $content['content']
- *   - $content['sidebar1']
+ *   - $content['sidebar']
  *   - $content['sidebar2']
- *   - $content['triptych1']
- *   - $content['triptych2']
- *   - $content['triptych3']
+ *   - $content['third1']
+ *   - $content['third2']
+ *   - $content['third3']
  *   - $content['quarter1']
  *   - $content['quarter2']
  *   - $content['quarter3']
@@ -75,16 +75,16 @@
 
     <?php if ($content['top']): ?>
       <div class="row">
-        <section class="l-top" role="region">
+        <div class="l-top col-md-12" role="region">
           <?php print $content['top']; ?>
-        </section>
+        </div>
       </div>
     <?php endif; ?>
 
       <div class="row">
         <div class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar1']): ?>
-          <?php print $content['sidebar1']; ?>
+          <?php if ($content['sidebar']): ?>
+          <?php print $content['sidebar']; ?>
           <?php endif; ?>
         </div>
         <main class="l-content col-md-6" role="main" aria-label="<?php print t('Main content'); ?>">
@@ -99,16 +99,16 @@
         </div>
       </div>
 
-      <?php if ($content['triptych1'] || $content['triptych2'] || $content['triptych3']): ?>
-        <section class="l-triptych row" role="region">
+      <?php if ($content['third1'] || $content['third2'] || $content['third3']): ?>
+        <section class="l-thirds row" role="region">
           <div class="col-md-4">
-            <?php print $content['triptych1']; ?>
+            <?php print $content['third1']; ?>
           </div>
           <div class="col-md-4">
-            <?php print $content['triptych2']; ?>
+            <?php print $content['third2']; ?>
           </div>
           <div class="col-md-4">
-            <?php print $content['triptych3']; ?>
+            <?php print $content['third3']; ?>
           </div>
         </section>
       <?php endif; ?>
