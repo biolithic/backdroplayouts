@@ -1,0 +1,59 @@
+/**
+ * Custom Hero Component
+ * @todo create config to make this work
+ */
+.hero {
+  margin: -2em 0 0; /* So it's flush with the header */
+  background: #0074bd url(../../images/texture.png) no-repeat center center;
+  background-blend-mode: luminosity;
+}
+
+.hero-content {
+  padding: 1.5rem 3.5rem 2rem 2.5rem;
+  font-size: 1em;
+}
+@media (min-width: 25em) {
+  .hero-content {
+    padding: 2rem 3.5rem 3rem 3rem;
+    font-size: 1.3em;
+  }
+}
+@media (min-width: 35em) {
+  .hero-content {
+    font-size: 1.5em;
+  }
+}
+
+.hero-title {
+  margin: 0 0 0.2em;
+  padding: 0;
+  font-weight: 200;
+  line-height: 1.2;
+  font-size: 2.3em;
+}
+@media (min-width: 35em) {
+  .hero-title {
+    font-size: 2.667em;
+  }
+}
+
+.hero-checklist {
+  margin: 0 0 1.5em;
+}
+
+.hero-checklist,
+.hero-check-wrapper {
+  padding: 0;
+  list-style: none;
+}
+
+.hero-check-wrapper {
+  margin: 0 0 0.5em;
+}
+
+.button.hero-call-to-action {
+  display: inline-block;
+  background: #0074bd;
+  color: #fff;
+  text-decoration: none;
+}
