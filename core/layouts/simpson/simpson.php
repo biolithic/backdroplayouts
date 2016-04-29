@@ -8,12 +8,12 @@
  * Process variables for the simpson layout.
  */
 function template_preprocess_layout__simpson(&$variables) {
-  if ($variables['content']['sidebar1'] && $variables['content']['sidebar2']) {
+  if ($variables['content']['sidebar'] && $variables['content']['sidebar2']) {
     $variables['classes'][] = 'layout-two-sidebars';
   }
-  elseif ($variables['content']['sidebar1'] || $variables['content']['sidebar2']) {
+  elseif ($variables['content']['sidebar'] || $variables['content']['sidebar2']) {
     $variables['classes'][] = 'layout-one-sidebar';
-    if ($variables['content']['sidebar1']) {
+    if ($variables['content']['sidebar']) {
       $variables['classes'][] = 'layout-sidebar-first';
     }
     else {

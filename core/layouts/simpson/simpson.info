@@ -4,26 +4,19 @@ backdrop = 1.x
 type = layout
 
 ; Specify regions for this layout.
-
-
-; Specify regions for this layout.
-regions[header] = Header
-regions[top] = Top
-regions[content] = Content
-regions[sidebar1] = Sidebar first
-regions[sidebar2] = Sidebar second
-regions[triptych1] = Tryptych first
-regions[triptych2] = Tryptych second
-regions[triptych3] = Tryptych last
-regions[quarter1]  = Quarter First
-regions[quarter2]  = Quarter Second
-regions[quarter3]  = Quarter Third
-regions[quarter4]  = Quarter Fourth
-regions[footer] = Footer
-
-; The default region automatically receives the "Main Content" block if needed.
-; Modify this line if you would like to change the default in this layout.
-default region = content
+regions[header]       = Header
+regions[top]          = Top
+regions[content]      = Content
+regions[sidebar]      = First Sidebar
+regions[sidebar2]     = Second Sidebar
+regions[third1]       = Tryptych First
+regions[third2]       = Tryptych Second
+regions[third3]       = Tryptych Third
+regions[quarter1]     = Quarter First
+regions[quarter2]     = Quarter Second
+regions[quarter3]     = Quarter Third
+regions[quarter4]     = Quarter Fourth
+regions[footer]       = Footer
 
 ; Preview
 preview = simpson.png

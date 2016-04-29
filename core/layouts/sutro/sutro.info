@@ -4,24 +4,18 @@ backdrop = 1.x
 type = layout
 
 ; Specify regions for this layout.
-regions[header]  = Header
-regions[top1]     = Top
-regions[content] = Content
-regions[double1] = First Column
-regions[double2] = Second Column
-regions[calltoaction] = Call To Action
-regions[bottom1]  = Bottom
-regions[footer]  = Footer
+regions[header]       = Header
+regions[top]          = Top
+regions[half1]        = Half First
+regions[half2]        = Half Second
+regions[bottom]       = Bottom
+regions[footer]       = Footer
 
 ; The default region automatically receives the "Main Content" block if needed.
-; Modify this line if you would like to change the default in this layout.
-default region = content
+default region = half1
 
 ; Preview
 preview = sutro.png
 
 ; Default stylesheets
 stylesheets[all][] = ../bootstrap-grid.css
-
-; Include file for special preprocessing of this layout's variables.
-; file = sutro.php

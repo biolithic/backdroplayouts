@@ -6,11 +6,14 @@ type = layout
 ; Specify regions for this layout.
 regions[header]     = Header
 regions[top]        = Top
-regions[column1]    = First Column
-regions[column2]    = Second Column
-regions[column3]    = Third Column
+regions[third1]     = First Column
+regions[third2]    = Second Column
+regions[third3]    = Third Column
 regions[bottom]     = Bottom
 regions[footer]     = Footer
+
+; The default region automatically receives the "Main Content" block if needed.
+default region = third2
 
 ; Preview
 preview = geary.png

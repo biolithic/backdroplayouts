@@ -16,14 +16,12 @@
  * - $content: An array of content, each item in the array is keyed to one
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
- *   - $content['top1']
- *   - $content['content']
+ *   - $content['top']
  *   - $content['quarter1']
  *   - $content['quarter2']
  *   - $content['quarter3']
  *   - $content['quarter4']
- *   - $content['calltoaction']
- *   - $content['bottom1']
+ *   - $content['bottom']
  *   - $content['footer']
  */
 ?>
@@ -70,57 +68,39 @@
 
     <?php print $action_links; ?>
 
-    <?php if ($content['top1']): ?>
-        <div class="row">
-          <section class="col-md-12 l-top l-top1 column" role="region">
-            <?php print $content['top1']; ?>
-          </section>
-        </div>
-      <?php endif; ?>
-
-    <?php if ($content['content']): ?>
-        <div class="row">
-          <main class="col-md-12 l-content column main" role="main" aria-label="<?php print t('Main content'); ?>">
-            <?php print $content['content']; ?>
-          </main>
-        </div>
+    <?php if ($content['top']): ?>
+      <div class="row">
+        <section class="l-top col-md-12" role="region">
+          <?php print $content['top']; ?>
+        </section>
+      </div>
     <?php endif; ?>
 
-      <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
-        <section class="l-quarter row" role="region">
-          <div class="col-md-3 l-quarter1">
-            <?php print $content['quarter1']; ?>
-          </div>
-          <div class="col-md-3 l-quarter2">
-            <?php print $content['quarter2']; ?>
-          </div>
-          <div class="col-md-3 l-quarter3">
-            <?php print $content['quarter3']; ?>
-          </div>
-          <div class="col-md-3 l-quarter4">
-            <?php print $content['quarter4']; ?>
-          </div>
-        </section>
-      <?php endif; ?>
-
-      <?php if ($content['bottom1']): ?>
-        <div class="row">
-          <div class="col-md-12 l-bottom l-bottom1">
-            <?php print $content['bottom1']; ?>
-          </div>
+    <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
+      <section class="l-quarter row" role="region">
+        <div class="col-md-3 l-quarter1">
+          <?php print $content['quarter1']; ?>
         </div>
-      <?php endif; ?>
-</div>
+        <div class="col-md-3 l-quarter2">
+          <?php print $content['quarter2']; ?>
+        </div>
+        <div class="col-md-3 l-quarter3">
+          <?php print $content['quarter3']; ?>
+        </div>
+        <div class="col-md-3 l-quarter4">
+          <?php print $content['quarter4']; ?>
+        </div>
+      </section>
+    <?php endif; ?>
 
-  <?php if ($content['calltoaction']): ?>
-    <div class="container-fluid">
+    <?php if ($content['bottom']): ?>
       <div class="row">
-        <footer class="l-calltoaction col-md-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
-          <?php print $content['calltoaction']; ?>
-        </footer>
+        <div class="l-bottom col-md-12">
+          <?php print $content['bottom']; ?>
+        </div>
       </div>
-    </div>
-  <?php endif; ?>
+    <?php endif; ?>
+  </div>
 
   <?php if ($content['footer']): ?>
     <div class="container-fluid">

@@ -16,12 +16,11 @@
  * - $content: An array of content, each item in the array is keyed to one
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
- *   - $content['top1']
+ *   - $content['top']
  *   - $content['content']
- *   - $content['double1']
- *   - $content['double2']
- *   - $content['calltoaction']
- *   - $content['bottom1']
+ *   - $content['half1']
+ *   - $content['half2']
+ *   - $content['bottom']
  *   - $content['footer']
  *
  */
@@ -35,7 +34,7 @@
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
       <div class="container-fluid">
         <div class="row">
-        <?php print $content['header']; ?>
+          <?php print $content['header']; ?>
         </div>
       </div>
     </header>
@@ -48,83 +47,64 @@
   <?php endif; ?>
 
   <div class="l-container">
-
     <div class="l-container-inner container-fluid">
+
       <div class="l-page-header row">
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title">
+            <?php print $title; ?>
+          </h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+      </div>
+
+      <?php if ($tabs): ?>
+        <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+          <?php print $tabs; ?>
+        </nav>
       <?php endif; ?>
-      <?php print render($title_suffix); ?>
-    </div>
 
-    <?php if ($tabs): ?>
-      <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
-        <?php print $tabs; ?>
-      </nav>
-    <?php endif; ?>
+      <?php print $action_links; ?>
 
-    <?php print $action_links; ?>
-
-    <?php if ($content['top1']): ?>
+      <?php if ($content['top']): ?>
         <div class="row">
-          <section class="col-md-12 l-top l-top1 column" role="region">
-            <?php print $content['top1']; ?>
+          <section class="l-top col-md-12" role="region">
+            <?php print $content['top']; ?>
           </section>
         </div>
       <?php endif; ?>
 
-    <?php if ($content['content']): ?>
-        <div class="row">
-          <main class="col-md-12 l-content column main" role="main" aria-label="<?php print t('Main content'); ?>">
-            <?php print $content['content']; ?>
-          </main>
-        </div>
-      <?php endif; ?>
-
-      <?php if ($content['double1'] || $content['double2']): ?>
+      <?php if ($content['half1'] || $content['half2']): ?>
         <section class="l-double row" role="region">
-          <div class="col-md-6 l-double1">
-            <?php print $content['double1']; ?>
+          <div class="col-md-6">
+            <?php print $content['half1']; ?>
           </div>
-          <div class="col-md-6 l-double2">
-            <?php print $content['double2']; ?>
+          <div class="col-md-6">
+            <?php print $content['half2']; ?>
           </div>
         </section>
       <?php endif; ?>
 
-      <?php if ($content['bottom1']): ?>
+      <?php if ($content['bottom']): ?>
         <div class="row">
-          <div class="col-md-12 l-bottom l-bottom1">
-            <?php print $content['bottom1']; ?>
+          <div class="l-bottom col-md-12">
+            <?php print $content['bottom']; ?>
           </div>
         </div>
       <?php endif; ?>
-
     </div>
 
-  <?php if ($content['calltoaction']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <footer class="l-calltoaction col-md-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
-          <?php print $content['calltoaction']; ?>
-        </footer>
+    <?php if ($content['footer']): ?>
+      <div class="container-fluid">
+        <div class="row">
+          <footer class="l-footer col-md-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
+            <?php print $content['footer']; ?>
+          </footer>
+        </div>
       </div>
-    </div>
-  <?php endif; ?>
-
-  <?php if ($content['footer']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <footer class="l-footer col-md-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
-          <?php print $content['footer']; ?>
-        </footer>
-      </div>
-    </div>
-  <?php endif; ?>
+    <?php endif; ?>
 
   </div>
 </div><!-- /.sutro -->
