@@ -593,12 +593,15 @@ function layout_library_info() {
     'title' => 'Bootstrap4 Grid System',
     'website' => 'http://v4-alpha.getbootstrap.com/layout/grid/',
     'version' => BACKDROP_VERSION,
+    'css' => array(
+      // @todo update to use grid-flexbox.css
+      $path . '/css/biolithic.css' => array(),
+    ),
+    /* @todo put this in to switch to grid-float.css
     'js' => array(
       $path . '/js/browser-detection.js' => array(),
     ),
-    'css' => array(
-      $path . '/css/grid-flexbox.css' => array(),
-    ),
+    */
   );
   return $libraries;
 }
