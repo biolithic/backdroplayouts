@@ -232,6 +232,10 @@ function layout_settings_form($form, &$form_state, Layout $layout) {
   // Get the list of layout options.
   $all_layout_info = layout_get_layout_info();
   foreach ($all_layout_info as $layout_name => $layout_info) {
+    // Don't reveal hidden layouts.
+    if ($layout_info['hidden']) {
+      continue;
+    }
     $form['layout']['#options'][$layout_name] = theme('layout_option', array('layout_info' => $layout_info));
   }
 

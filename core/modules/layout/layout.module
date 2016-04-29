@@ -1123,15 +1123,27 @@ function layout_get_layout_info($layout_name = NULL) {
     }
     $info = _layout_get_all_info('layout', $init);
 
+    // Check which layout templates are in-use.
+    $layouts = layout_load_all();
+    $used_templates = array();
+    foreach ($layouts as $layout) {
+      $used_templates[] = $layout->layout;
+    }
+
     // Populate defaults.
     foreach ($info as $name => $layout_info) {
       $info[$name] += array(
+        'hidden' => FALSE,
         'preview' => 'preview.png',
         'default region' => 'content',
         'stylesheets' => array(
           'all' => array(str_replace('_', '-', $name) . '.css'),
         ),
       );
+      // Show hidden templates if in use.
+      if (in_array($name, $used_templates)) {
+        $info[$name]['hidden'] = FALSE;
+      }
       if (!isset($info[$name]['template'])) {
         $template_path = BACKDROP_ROOT . '/' . $layout_info['path'] . '/layout--' . str_replace('_', '-', $name) . '.tpl.php';
         if (is_file($template_path)) {
