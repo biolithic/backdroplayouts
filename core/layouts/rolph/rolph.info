@@ -19,5 +19,5 @@ default region = quarter1
 ; Preview
 preview = rolph.png
 
-; Default stylesheets
-stylesheets[all][] = ../bootstrap-grid.css
+; Include the Bootstrap4 Grid System
+libraries[] = bootstrap4-gs
