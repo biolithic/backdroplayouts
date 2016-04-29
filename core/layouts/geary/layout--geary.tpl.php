@@ -16,15 +16,14 @@
  * - $content: An array of content, each item in the array is keyed to one
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
- *   - $content['top1']
- *   - $content['triptych1']
- *   - $content['triptych2']
- *   - $content['triptych3']
- *   - $content['calltoaction']
+ *   - $content['top']
+ *   - $content['column1']
+ *   - $content['column2']
+ *   - $content['column3']
+ *   - $content['bottom']
  *   - $content['footer']
  */
 ?>
-
 <div class="layout--geary <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
@@ -32,94 +31,76 @@
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="container-fluid">
-        <div class="row">
+      <div class="container">
         <?php print $content['header']; ?>
-        </div>
       </div>
     </header>
   <?php endif; ?>
 
   <?php if ($messages): ?>
-    <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
+    <div class="l-messages container">
       <?php print $messages; ?>
     </div>
   <?php endif; ?>
 
   <div class="l-container">
+    <div class="l-container-inner container">
+      <div class="l-page-header">
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title">
+            <?php print $title; ?>
+          </h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+      </div>
 
-    <div class="l-container-inner container-fluid">
-      <div class="l-page-header row">
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-    </div>
-
-    <?php if ($tabs): ?>
-      <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
-        <?php print $tabs; ?>
-      </nav>
-    <?php endif; ?>
-
-    <?php print $action_links; ?>
-
-      <?php if ($content['top1']): ?>
-        <div class="row">
-          <section class="col-md-12 l-top l-top1 column panel-panel" role="region">
-            <?php print $content['top1']; ?>
-          </section>
+      <?php if ($tabs): ?>
+        <div class="tabs">
+          <?php print $tabs; ?>
         </div>
       <?php endif; ?>
 
-      <?php if ($content['content']): ?>
+      <?php print $action_links; ?>
+
+      <div class="container-fluid">
+        <?php if (!empty($content['top'])): ?>
+          <div class="row">
+            <div class="col-md-12 l-topcolumn panel-panel">
+              <?php print $content['top']; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+
         <div class="row">
-          <main class="col-md-12 l-content column main panel-panel" role="main" aria-label="<?php print t('Main content'); ?>">
-            <?php print $content['content']; ?>
-          </main>
+          <div class="col-md-4 l-column1 panel-panel">
+            <?php print $content['column1']; ?>
+          </div>
+          <div class="col-md-4 l-column2 panel-panel">
+            <?php print $content['column2']; ?>
+          </div>
+          <div class="col-md-4 l-column3 panel-panel">
+            <?php print $content['column3']; ?>
+          </div>
         </div>
-      <?php endif; ?>
 
-      <?php if ($content['triptych1'] || $content['triptych2'] || $content['triptych3']): ?>
-        <section class="l-triptych row" role="region">
-          <div class="col-md-4 l-triptych1 panel-panel">
-            <?php print $content['triptych1']; ?>
+        <?php if (!empty($content['bottom'])): ?>
+          <div class="row">
+            <div class="col-md-12 l-bottom panel-panel">
+              <?php print $content['bottom']; ?>
+            </div>
           </div>
-          <div class="col-md-4 l-triptych2 panel-panel">
-            <?php print $content['triptych2']; ?>
-          </div>
-          <div class="col-md-4 l-triptych3 panel-panel">
-            <?php print $content['triptych3']; ?>
-          </div>
-        </section>
-      <?php endif; ?>
-
-    </div>
-
-
-  <?php if ($content['calltoaction']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <footer class="l-calltoaction col-md-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
-          <?php print $content['calltoaction']; ?>
-        </footer>
+        <?php endif; ?>
       </div>
     </div>
-  <?php endif; ?>
+  </div>
 
   <?php if ($content['footer']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <footer class="l-footer col-md-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
-          <?php print $content['footer']; ?>
-        </footer>
+    <footer class="l-footer"  role="footer">
+      <div class="container">
+        <?php print $content['footer']; ?>
       </div>
-    </div>
+    </footer>
   <?php endif; ?>
-
-  </div>
 </div><!-- /.geary -->
