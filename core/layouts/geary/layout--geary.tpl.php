@@ -17,9 +17,9 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['top']
- *   - $content['column1']
- *   - $content['column2']
- *   - $content['column3']
+ *   - $content['third']
+ *   - $content['third2']
+ *   - $content['third3']
  *   - $content['bottom']
  *   - $content['footer']
  */
@@ -67,27 +67,27 @@
       <div class="container-fluid">
         <?php if (!empty($content['top'])): ?>
           <div class="row">
-            <div class="col-md-12 l-topcolumn">
+            <div class="l-top col-md-12">
               <?php print $content['top']; ?>
             </div>
           </div>
         <?php endif; ?>
 
-        <div class="row">
-          <div class="col-md-4 l-column1">
-            <?php print $content['column1']; ?>
+        <div class="l-thirds row">
+          <div class="col-md-4">
+            <?php print $content['third1']; ?>
           </div>
-          <div class="col-md-4 l-column2">
-            <?php print $content['column2']; ?>
+          <div class="col-md-4">
+            <?php print $content['third2']; ?>
           </div>
-          <div class="col-md-4 l-column3">
-            <?php print $content['column3']; ?>
+          <div class="col-md-4">
+            <?php print $content['third3']; ?>
           </div>
         </div>
 
         <?php if (!empty($content['bottom'])): ?>
           <div class="row">
-            <div class="col-md-12 l-bottom">
+            <div class="l-bottom col-md-12">
               <?php print $content['bottom']; ?>
             </div>
           </div>

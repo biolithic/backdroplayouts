@@ -17,7 +17,6 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['content']
- *   - $content['calltoaction']
  *   - $content['footer']
  */
 ?>
@@ -72,16 +71,6 @@
       </div>
     <?php endif; ?>
   </div>
-
-  <?php if ($content['calltoaction']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <footer class="l-calltoaction col-md-12" role="secondary" aria-label="<?php print t('Action to take'); ?>">
-          <?php print $content['calltoaction']; ?>
-        </footer>
-      </div>
-    </div>
-  <?php endif; ?>
 
   <?php if ($content['footer']): ?>
     <div class="container-fluid">

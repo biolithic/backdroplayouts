@@ -43,53 +43,53 @@
   <?php endif; ?>
 
   <div class="l-container">
-  <div class="l-container-inner container">
-    <div class="l-page-header">
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-    </div>
-
-    <?php if ($tabs): ?>
-      <div class="tabs">
-        <?php print $tabs; ?>
-      </div>
-    <?php endif; ?>
-
-    <?php print $action_links; ?>
-
-    <div class="container-fluid">
-      <?php if (!empty($content['top'])): ?>
-        <div class="row">
-          <div class="col-md-12 l-topcolumn">
-            <?php print $content['top']; ?>
-          </div>
-        </div>
-      <?php endif; ?>
-
-      <div class="row">
-        <div class="col-md-9 l-contentcolumn">
-          <?php print $content['content']; ?>
-        </div>
-        <div class="col-md-3 l-sidebar">
-          <?php print $content['sidebar']; ?>
-        </div>
+    <div class="l-container-inner container">
+      <div class="l-page-header">
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title">
+            <?php print $title; ?>
+          </h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
       </div>
 
-      <?php if (!empty($content['bottom'])): ?>
-        <div class="row">
-          <div class="col-md-12 l-bottom">
-            <?php print $content['bottom']; ?>
-          </div>
+      <?php if ($tabs): ?>
+        <div class="tabs">
+          <?php print $tabs; ?>
         </div>
       <?php endif; ?>
+
+      <?php print $action_links; ?>
+
+      <div class="container-fluid">
+        <?php if (!empty($content['top'])): ?>
+          <div class="row">
+            <div class="l-top col-md-12">
+              <?php print $content['top']; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+
+        <div class="row">
+          <div class="l-content col-md-9">
+            <?php print $content['content']; ?>
+          </div>
+          <div class="l-sidebar col-md-3">
+            <?php print $content['sidebar']; ?>
+          </div>
+        </div>
+
+        <?php if (!empty($content['bottom'])): ?>
+          <div class="row">
+            <div class="l-bottom col-md-12">
+              <?php print $content['bottom']; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
     </div>
-  </div>
   </div>
 
   <?php if ($content['footer']): ?>
