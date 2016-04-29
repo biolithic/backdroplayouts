@@ -4,20 +4,22 @@ backdrop = 1.x
 type = layout
 
 ; Specify regions for this layout.
+
+
+; Specify regions for this layout.
 regions[header] = Header
-regions[top1] = Top
-regions[sidebar1] = First Sidebar
+regions[top] = Top
 regions[content] = Content
-regions[sidebar2] = Second Sidebar
-regions[triptych1] = First Column
-regions[triptych2] = Second Column
-regions[triptych3] = Third Column
-regions[quarter1]  = First Column
-regions[quarter2]  = Second Column
-regions[quarter3]  = Third Column
-regions[quarter4]  = Fourth Column
-regions[calltoaction] = Call To Action
-regions[footer] = Footer bottom
+regions[sidebar1] = Sidebar first
+regions[sidebar2] = Sidebar second
+regions[triptych1] = Tryptych first
+regions[triptych2] = Tryptych second
+regions[triptych3] = Tryptych last
+regions[quarter1]  = Quarter First
+regions[quarter2]  = Quarter Second
+regions[quarter3]  = Quarter Third
+regions[quarter4]  = Quarter Fourth
+regions[footer] = Footer
 
 ; The default region automatically receives the "Main Content" block if needed.
 ; Modify this line if you would like to change the default in this layout.
