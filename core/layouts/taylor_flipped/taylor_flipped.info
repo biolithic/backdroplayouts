@@ -15,6 +15,5 @@ regions[footer]       = Footer
 ; Preview
 preview = taylor-flipped.png
 
-; Default stylesheets
-stylesheets[all][] = ../bootstrap-grid.css
-
+; Include the Bootstrap4 Grid System
+libraries[] = bootstrap4-gs

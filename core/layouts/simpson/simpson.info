@@ -21,8 +21,8 @@ regions[footer]       = Footer
 ; Preview
 preview = simpson.png
 
-; Default stylesheets
-stylesheets[all][] = ../bootstrap-grid.css
+; Include the Bootstrap4 Grid System
+libraries[] = bootstrap4-gs
 
 ; Include file for special preprocessing of this layout's variables.
 file = simpson.php

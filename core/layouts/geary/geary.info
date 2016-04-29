@@ -18,5 +18,5 @@ default region = third2
 ; Preview
 preview = geary.png
 
-; Default stylesheets
-stylesheets[all][] = ../bootstrap-grid.css
+; Include the Bootstrap4 Grid System
+libraries[] = bootstrap4-gs

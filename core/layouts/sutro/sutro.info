@@ -17,5 +17,5 @@ default region = half1
 ; Preview
 preview = sutro.png
 
-; Default stylesheets
-stylesheets[all][] = ../bootstrap-grid.css
+; Include the Bootstrap4 Grid System
+libraries[] = bootstrap4-gs
