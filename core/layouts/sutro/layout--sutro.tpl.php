@@ -68,33 +68,35 @@
 
       <?php print $action_links; ?>
 
-      <?php if ($content['top']): ?>
-        <div class="row">
-          <section class="l-top col-md-12" role="region">
-            <?php print $content['top']; ?>
+      <div class="container container-fluid">
+        <?php if ($content['top']): ?>
+          <div class="row">
+            <section class="l-top col-md-12" role="region">
+              <?php print $content['top']; ?>
+            </section>
+          </div>
+        <?php endif; ?>
+
+        <?php if ($content['half1'] || $content['half2']): ?>
+          <section class="l-double row" role="region">
+            <div class="col-md-6">
+              <?php print $content['half1']; ?>
+            </div>
+            <div class="col-md-6">
+              <?php print $content['half2']; ?>
+            </div>
           </section>
-        </div>
-      <?php endif; ?>
+        <?php endif; ?>
 
-      <?php if ($content['half1'] || $content['half2']): ?>
-        <section class="l-double row" role="region">
-          <div class="col-md-6">
-            <?php print $content['half1']; ?>
+        <?php if ($content['bottom']): ?>
+          <div class="row">
+            <div class="l-bottom col-md-12">
+              <?php print $content['bottom']; ?>
+            </div>
           </div>
-          <div class="col-md-6">
-            <?php print $content['half2']; ?>
-          </div>
-        </section>
-      <?php endif; ?>
-
-      <?php if ($content['bottom']): ?>
-        <div class="row">
-          <div class="l-bottom col-md-12">
-            <?php print $content['bottom']; ?>
-          </div>
-        </div>
-      <?php endif; ?>
-    </div>
+        <?php endif; ?>
+      </div><!-- /.container -->
+    </div><!-- /.l-wrapper-inner -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">
