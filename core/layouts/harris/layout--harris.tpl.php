@@ -43,8 +43,8 @@
     </div>
   <?php endif; ?>
 
-  <div class="l-container">
-    <div class="l-container-inner container">
+  <div class="l-wrapper">
+    <div class="l-wrapper-inner container">
 
       <div class="l-page-header">
         <a id="main-content"></a>

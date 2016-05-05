@@ -46,8 +46,8 @@
     </div>
   <?php endif; ?>
 
-  <div class="l-container">
-    <div class="l-container-inner container-fluid">
+  <div class="l-wrapper">
+    <div class="l-wrapper-inner container-fluid">
 
       <div class="l-page-header row">
         <a id="main-content"></a>
