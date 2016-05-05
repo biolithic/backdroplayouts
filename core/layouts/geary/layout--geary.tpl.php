@@ -31,9 +31,11 @@
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="container">
-        <?php print $content['header']; ?>
-      </div>
+      <div class="container container-fluid">
+        <div class="row">
+          <?php print $content['header']; ?>
+        </div><!-- /.row -->
+      </div><!-- /.container -->
     </header>
   <?php endif; ?>
 
@@ -94,13 +96,16 @@
         <?php endif; ?>
       </div>
     </div>
-  </div>
 
-  <?php if ($content['footer']): ?>
-    <footer class="l-footer"  role="footer">
-      <div class="container">
-        <?php print $content['footer']; ?>
-      </div>
-    </footer>
-  <?php endif; ?>
+    <?php if ($content['footer']): ?>
+      <footer class="l-footer"  role="footer">
+        <div class="container container-fluid">
+          <div class="row">
+            <?php print $content['footer']; ?>
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </footer>
+    <?php endif; ?>
+
+  </div><!-- /.l-wrapper -->
 </div><!-- /.geary -->

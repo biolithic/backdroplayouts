@@ -27,11 +27,11 @@
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="container-fluid">
+      <div class="container container-fluid">
         <div class="row">
-        <?php print $content['header']; ?>
-        </div>
-      </div>
+          <?php print $content['header']; ?>
+        </div><!-- /.row -->
+      </div><!-- /.container -->
     </header>
   <?php endif; ?>
 
@@ -42,45 +42,45 @@
   <?php endif; ?>
 
   <div class="l-wrapper">
+    <div class="l-wrapper-inner container container-fluid">
 
-    <div class="l-wrapper-inner container-fluid">
-      <div class="l-page-header row">
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
+      <div class="l-page-header">
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title">
+            <?php print $title; ?>
+          </h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+      </div>
+
+      <?php if ($tabs): ?>
+        <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+          <?php print $tabs; ?>
+        </nav>
       <?php endif; ?>
-      <?php print render($title_suffix); ?>
+
+      <?php print $action_links; ?>
+
+      <?php if ($content['content']): ?>
+        <div class="row">
+          <main class="l-content col-md-12 main" role="main" aria-label="<?php print t('Main content'); ?>">
+            <?php print $content['content']; ?>
+          </main>
+        </div>
+      <?php endif; ?>
     </div>
 
-    <?php if ($tabs): ?>
-      <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
-        <?php print $tabs; ?>
-      </nav>
+    <?php if ($content['footer']): ?>
+      <footer class="l-footer"  role="footer">
+        <div class="container container-fluid">
+          <div class="row">
+            <?php print $content['footer']; ?>
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </footer>
     <?php endif; ?>
 
-    <?php print $action_links; ?>
-
-    <?php if ($content['content']): ?>
-      <div class="row">
-        <main class="col-md-12 l-content column main" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php print $content['content']; ?>
-        </main>
-      </div>
-    <?php endif; ?>
-  </div>
-
-  <?php if ($content['footer']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <footer class="l-footer col-md-12" role="contentinfo" aria-label="<?php print t('Footer navigation'); ?>">
-          <?php print $content['footer']; ?>
-        </footer>
-      </div>
-    </div>
-  <?php endif; ?>
-
-  </div>
+  </div><!-- /.l-wrapper -->
 </div><!-- /.boxton -->
