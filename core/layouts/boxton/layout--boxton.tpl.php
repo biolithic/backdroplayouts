@@ -27,11 +27,7 @@
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="container container-fluid">
-        <div class="row">
-          <?php print $content['header']; ?>
-        </div><!-- /.row -->
-      </div><!-- /.container -->
+      <?php print $content['header']; ?>
     </header>
   <?php endif; ?>
 
@@ -44,7 +40,7 @@
   <div class="l-wrapper">
     <div class="l-wrapper-inner container container-fluid">
 
-      <div class="l-page-header">
+      <div class="l-page-header row">
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?>
