@@ -60,14 +60,14 @@
       </div>
 
       <?php if ($tabs): ?>
-        <div class="tabs">
+        <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
           <?php print $tabs; ?>
-        </div>
+        </nav>
       <?php endif; ?>
 
       <?php print $action_links; ?>
 
-      <div class="container-fluid">
+      <div class="container container-fluid">
         <?php if (!empty($content['top'])): ?>
           <div class="row">
             <div class="l-top col-md-12">
@@ -95,8 +95,8 @@
             </div>
           </div>
         <?php endif; ?>
-      </div>
-    </div>
+      </div><!-- /.container -->
+    </div><!-- /.l-wrapper-inner -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">
