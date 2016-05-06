@@ -45,7 +45,8 @@
   <?php endif; ?>
 
   <div class="l-wrapper">
-    <div class="l-wrapper-inner container">
+    <div class="l-wrapper-inner container container-fluid">
+
       <div class="l-page-header row">
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
