@@ -46,15 +46,13 @@
   <?php endif; ?>
 
   <div class="l-wrapper">
-    <div class="l-wrapper-inner container">
+    <div class="l-wrapper-inner container container-fluid">
 
       <div class="l-page-header row">
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?>
-          <h1 class="title" id="page-title">
-            <?php print $title; ?>
-          </h1>
+          <h1 class="title" id="page-title"><?php print $title; ?></h1>
         <?php endif; ?>
         <?php print render($title_suffix); ?>
       </div>
