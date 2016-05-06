@@ -27,12 +27,16 @@
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <?php print $content['header']; ?>
+      <div class="container container-fluid">
+        <div class="row">
+          <?php print $content['header']; ?>
+        </div><!-- /.row -->
+      </div><!-- /.container -->
     </header>
   <?php endif; ?>
 
   <?php if ($messages): ?>
-    <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
+    <div class="l-messages container" role="status" aria-label="<?php print t('Status messages'); ?>">
       <?php print $messages; ?>
     </div>
   <?php endif; ?>
