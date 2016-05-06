@@ -32,8 +32,6 @@
   padding-left: 15px;
   box-sizing: border-box;
   width: 100%;
-  min-width: 0;
-  /* Fix for Chrome bug https://bugs.chromium.org/p/chromium/issues/detail?id=546034#c6 */
 }
 
 .container:before,
@@ -244,6 +242,7 @@
 .col-xl-11,
 .col-xl-12 {
   position: relative;
+  min-width: 0; /* Fix for Chrome bug https://bugs.chromium.org/p/chromium/issues/detail?id=546034#c6 */
   min-height: 1px;
   padding-right: .9375rem;
   padding-left: .9375rem;
