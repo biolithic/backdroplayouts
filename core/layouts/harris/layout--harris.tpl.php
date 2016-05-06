@@ -40,7 +40,7 @@
   <?php endif; ?>
 
   <?php if ($messages): ?>
-    <div class="l-messages container">
+    <div class="l-messages container" role="status" aria-label="<?php print t('Status messages'); ?>">
       <?php print $messages; ?>
     </div>
   <?php endif; ?>
