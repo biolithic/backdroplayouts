@@ -276,9 +276,14 @@ ul.tips {
 
 /* ------------------ Layout ------------------ */
 
+.container {
+  max-width: 960px;
+}
+
 /* All layouts */
 .l-container,
 .l-top,
+.l-bottom,
 .l-messages,
 
 /* Special wrapper added in template.php. */
@@ -288,12 +293,21 @@ ul.tips {
 .l-featured,
 .l-triptych,
 .l-footer-columns {
-  max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.layout-legacy .l-container,
+.layout-legacy .l-top,
+.layout-legacy .l-messages,
+.layout-legacy .l-header-inner,
+.layout-legacy .l-featured,
+.layout-legacy .l-triptych,
+.layout-legacy .l-footer-columns {
+  max-width: 960px;
+  padding: 0 20px;
 }
 
 /* Push the footer down to the bottom of the page. */
@@ -621,6 +635,12 @@ ul.tips {
 /* ----------------- Top ----------------- */
 
 .l-top {
+  margin-top: 20px;
+}
+
+/* ----------------- Bottom ----------------- */
+
+.l-bottom {
   margin-top: 20px;
 }
 
