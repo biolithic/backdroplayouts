@@ -69,36 +69,34 @@
 
       <?php print $action_links; ?>
 
-      <div class="container container-fluid">
-        <?php if (!empty($content['top'])): ?>
-          <div class="row">
-            <div class="l-top col-md-12">
-              <?php print $content['top']; ?>
-            </div>
-          </div>
-        <?php endif; ?>
-
-        <div class="l-thirds row">
-          <div class="col-md-4">
-            <?php print $content['third1']; ?>
-          </div>
-          <div class="col-md-4">
-            <?php print $content['third2']; ?>
-          </div>
-          <div class="col-md-4">
-            <?php print $content['third3']; ?>
+      <?php if (!empty($content['top'])): ?>
+        <div class="row">
+          <div class="l-top col-md-12">
+            <?php print $content['top']; ?>
           </div>
         </div>
+      <?php endif; ?>
 
-        <?php if (!empty($content['bottom'])): ?>
-          <div class="row">
-            <div class="l-bottom col-md-12">
-              <?php print $content['bottom']; ?>
-            </div>
+      <div class="l-thirds row">
+        <div class="col-md-4">
+          <?php print $content['third1']; ?>
+        </div>
+        <div class="col-md-4">
+          <?php print $content['third2']; ?>
+        </div>
+        <div class="col-md-4">
+          <?php print $content['third3']; ?>
+        </div>
+      </div>
+
+      <?php if (!empty($content['bottom'])): ?>
+        <div class="row">
+          <div class="l-bottom col-md-12">
+            <?php print $content['bottom']; ?>
           </div>
-        <?php endif; ?>
-      </div><!-- /.container -->
-    </div><!-- /.l-wrapper-inner -->
+        </div>
+      <?php endif; ?>
+    </div><!-- /.l-wrapper-inner /.container -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">

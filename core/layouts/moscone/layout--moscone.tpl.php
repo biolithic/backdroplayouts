@@ -68,33 +68,31 @@
 
       <?php print $action_links; ?>
 
-      <div class="container container-fluid">
-        <?php if (!empty($content['top'])): ?>
-          <div class="row">
-            <div class="l-top col-md-12">
-              <?php print $content['top']; ?>
-            </div>
-          </div>
-        <?php endif; ?>
-
+      <?php if (!empty($content['top'])): ?>
         <div class="row">
-          <div class="l-sidebar col-md-3">
-            <?php print $content['sidebar']; ?>
-          </div>
-          <div class="l-content col-md-9">
-            <?php print $content['content']; ?>
+          <div class="l-top col-md-12">
+            <?php print $content['top']; ?>
           </div>
         </div>
+      <?php endif; ?>
 
-        <?php if (!empty($content['bottom'])): ?>
-          <div class="row">
-            <div class="l-bottom col-md-12">
-              <?php print $content['bottom']; ?>
-            </div>
+      <div class="row">
+        <div class="l-sidebar col-md-3">
+          <?php print $content['sidebar']; ?>
+        </div>
+        <div class="l-content col-md-9">
+          <?php print $content['content']; ?>
+        </div>
+      </div>
+
+      <?php if (!empty($content['bottom'])): ?>
+        <div class="row">
+          <div class="l-bottom col-md-12">
+            <?php print $content['bottom']; ?>
           </div>
-        <?php endif; ?>
-      </div><!-- /.container -->
-    </div><!-- /.l-wrapper-inner -->
+        </div>
+      <?php endif; ?>
+    </div><!-- /.l-wrapper-inner /.container -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">

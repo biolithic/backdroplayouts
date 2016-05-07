@@ -69,42 +69,40 @@
 
       <?php print $action_links; ?>
 
-      <div class="container container-fluid">
-        <?php if ($content['top']): ?>
-          <div class="row">
-            <section class="l-top col-md-12" role="region">
-              <?php print $content['top']; ?>
-            </section>
-          </div>
-        <?php endif; ?>
-
+      <?php if ($content['top']): ?>
         <div class="row">
-          <main class="col-md-6 l-content main" role="main" aria-label="<?php print t('Main content'); ?>">
-            <?php if ($content['content']): ?>
-            <?php print $content['content']; ?>
-            <?php endif; ?>
-          </main>
-          <aside class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-            <?php if ($content['sidebar']): ?>
-            <?php print $content['sidebar']; ?>
-            <?php endif; ?>
-          </aside>
-          <aside class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-            <?php if ($content['sidebar2']): ?>
-            <?php print $content['sidebar2']; ?>
-            <?php endif; ?>
-          </aside>
+          <section class="l-top col-md-12" role="region">
+            <?php print $content['top']; ?>
+          </section>
         </div>
+      <?php endif; ?>
 
-        <?php if ($content['bottom']): ?>
-          <div class="row">
-            <div class="l-bottom col-md-12">
-              <?php print $content['bottom']; ?>
-            </div>
+      <div class="row">
+        <main class="col-md-6 l-content main" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php if ($content['content']): ?>
+          <?php print $content['content']; ?>
+          <?php endif; ?>
+        </main>
+        <aside class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+          <?php if ($content['sidebar']): ?>
+          <?php print $content['sidebar']; ?>
+          <?php endif; ?>
+        </aside>
+        <aside class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+          <?php if ($content['sidebar2']): ?>
+          <?php print $content['sidebar2']; ?>
+          <?php endif; ?>
+        </aside>
+      </div>
+
+      <?php if ($content['bottom']): ?>
+        <div class="row">
+          <div class="l-bottom col-md-12">
+            <?php print $content['bottom']; ?>
           </div>
-        <?php endif; ?>
-      </div><!-- /.container -->
-    </div><!-- /.l-wrapper-inner -->
+        </div>
+      <?php endif; ?>
+    </div><!-- /.l-wrapper-inner /.container -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">

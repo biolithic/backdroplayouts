@@ -70,35 +70,33 @@
 
       <?php print $action_links; ?>
 
-      <div class="container container-fluid">
-        <?php if ($content['top']): ?>
-          <div class="row">
-            <section class="l-top col-md-12" role="region">
-              <?php print $content['top']; ?>
-            </section>
-          </div>
-        <?php endif; ?>
-
-        <?php if ($content['half1'] || $content['half2']): ?>
-          <section class="l-double row" role="region">
-            <div class="col-md-6">
-              <?php print $content['half1']; ?>
-            </div>
-            <div class="col-md-6">
-              <?php print $content['half2']; ?>
-            </div>
+      <?php if ($content['top']): ?>
+        <div class="row">
+          <section class="l-top col-md-12" role="region">
+            <?php print $content['top']; ?>
           </section>
-        <?php endif; ?>
+        </div>
+      <?php endif; ?>
 
-        <?php if ($content['bottom']): ?>
-          <div class="row">
-            <div class="l-bottom col-md-12">
-              <?php print $content['bottom']; ?>
-            </div>
+      <?php if ($content['half1'] || $content['half2']): ?>
+        <section class="l-double row" role="region">
+          <div class="col-md-6">
+            <?php print $content['half1']; ?>
           </div>
-        <?php endif; ?>
-      </div><!-- /.container -->
-    </div><!-- /.l-wrapper-inner -->
+          <div class="col-md-6">
+            <?php print $content['half2']; ?>
+          </div>
+        </section>
+      <?php endif; ?>
+
+      <?php if ($content['bottom']): ?>
+        <div class="row">
+          <div class="l-bottom col-md-12">
+            <?php print $content['bottom']; ?>
+          </div>
+        </div>
+      <?php endif; ?>
+    </div><!-- /.l-wrapper-inner /.container -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">
