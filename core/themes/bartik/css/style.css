@@ -293,7 +293,6 @@ ul.tips {
 .l-featured,
 .l-triptych,
 .l-footer-columns {
-  margin: 0 auto;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -306,6 +305,7 @@ ul.tips {
 .layout-legacy .l-featured,
 .layout-legacy .l-triptych,
 .layout-legacy .l-footer-columns {
+  margin: 0 auto;
   max-width: 960px;
   padding: 0 20px;
 }
