@@ -1,0 +1,41 @@
+/**
+ * Fixes elements not doing well with border-box box-sizing.
+ */
+.tabledrag-handle .handle {
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -o-box-sizing: content-box;
+}
+
+/**
+ * Fixes Nested Containers.
+ *
+ * @see https://www.drupal.org/node/2334871
+ * @see https://github.com/twbs/bootstrap/issues/11436#issuecomment-29580965
+ */
+.container .container {
+  width: auto;
+  margin-left: .9375rem;
+  margin-right: .9375rem;
+}
+
+/**
+ * Test colors by @biolithic.
+ * @todo remove these.
+ */
+.l-container {
+  background-color: #ddd;
+}
+
+.l-container-inner {
+  background-color: #def;
+}
+
+.l-page-header {
+  background-color: #fed;
+}
+
+.l-sidebar, .l-calltoaction {
+  background-color: #aaa;
+}
