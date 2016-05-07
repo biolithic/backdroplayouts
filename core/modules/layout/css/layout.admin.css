@@ -89,6 +89,7 @@
 
 /* Layout editor. */
 .layout-editor-region {
+  width: 100%;
   min-height: 70px;
   margin: 0 0 15px;
   padding: 8px;
