@@ -132,7 +132,7 @@
         </section>
       <?php endif; ?>
 
-    </div><!-- /.l-wrapper-inner -->
+    </div><!-- /.l-wrapper-inner /.container -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">

@@ -70,42 +70,39 @@
 
       <?php print $action_links; ?>
 
-      <div class="container container-fluid">
-
-        <?php if ($content['top']): ?>
-          <div class="row">
-            <section class="l-top col-md-12" role="region">
-              <?php print $content['top']; ?>
-            </section>
-          </div>
-        <?php endif; ?>
-
-        <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
-          <section class="l-quarter row" role="region">
-            <div class="col-md-3 l-quarter1">
-              <?php print $content['quarter1']; ?>
-            </div>
-            <div class="col-md-3 l-quarter2">
-              <?php print $content['quarter2']; ?>
-            </div>
-            <div class="col-md-3 l-quarter3">
-              <?php print $content['quarter3']; ?>
-            </div>
-            <div class="col-md-3 l-quarter4">
-              <?php print $content['quarter4']; ?>
-            </div>
+      <?php if ($content['top']): ?>
+        <div class="row">
+          <section class="l-top col-md-12" role="region">
+            <?php print $content['top']; ?>
           </section>
-        <?php endif; ?>
+        </div>
+      <?php endif; ?>
 
-        <?php if ($content['bottom']): ?>
-          <div class="row">
-            <div class="l-bottom col-md-12">
-              <?php print $content['bottom']; ?>
-            </div>
+      <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
+        <section class="l-quarter row" role="region">
+          <div class="col-md-3 l-quarter1">
+            <?php print $content['quarter1']; ?>
           </div>
-        <?php endif; ?>
-      </div><!-- /.container -->
-    </div><!-- /.l-wrapper-inner -->
+          <div class="col-md-3 l-quarter2">
+            <?php print $content['quarter2']; ?>
+          </div>
+          <div class="col-md-3 l-quarter3">
+            <?php print $content['quarter3']; ?>
+          </div>
+          <div class="col-md-3 l-quarter4">
+            <?php print $content['quarter4']; ?>
+          </div>
+        </section>
+      <?php endif; ?>
+
+      <?php if ($content['bottom']): ?>
+        <div class="row">
+          <div class="l-bottom col-md-12">
+            <?php print $content['bottom']; ?>
+          </div>
+        </div>
+      <?php endif; ?>
+    </div><!-- /.l-wrapper-inner /.container -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">

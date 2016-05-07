@@ -72,7 +72,7 @@
           </main>
         </div>
       <?php endif; ?>
-    </div>
+    </div><!-- /.l-wrapper-inner /.container -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">
