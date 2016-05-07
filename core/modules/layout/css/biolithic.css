@@ -1,0 +1,19 @@
+/**
+ * Test colors by @biolithic.
+ * @todo remove this file before release.
+ */
+.l-container {
+  background-color: #ddd;
+}
+
+.l-container-inner {
+  background-color: #def;
+}
+
+.l-page-header {
+  background-color: #fed;
+}
+
+.l-sidebar, .l-calltoaction {
+  background-color: #aaa;
+}

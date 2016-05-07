@@ -556,7 +556,8 @@ function layout_library_info() {
     'version' => BACKDROP_VERSION,
     'css' => array(
       $path . '/css/grid-flexbox.css' => array(),
-      $path . '/css/fix-backdrop.css' => array(),
+      // @todo remove this file before release.
+      $path . '/css/biolithic.css' => array(),
     ),
     /* @todo put this in to switch to grid-float.css
     'js' => array(
