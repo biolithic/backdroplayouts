@@ -45,14 +45,16 @@
     </header>
   <?php endif; ?>
 
-  <?php if ($messages): ?>
-    <div class="l-messages container" role="status" aria-label="<?php print t('Status messages'); ?>">
-      <?php print $messages; ?>
-    </div>
-  <?php endif; ?>
-
   <div class="l-wrapper">
     <div class="l-wrapper-inner container container-fluid">
+
+      <?php if ($messages): ?>
+        <div class="l-messages row" role="status" aria-label="<?php print t('Status messages'); ?>">
+          <div class="col-xs-12">
+            <?php print $messages; ?>
+          </div>
+        </div>
+      <?php endif; ?>
 
       <div class="l-page-header row">
         <a id="main-content"></a>
@@ -66,71 +68,70 @@
       </div>
 
       <?php if ($tabs): ?>
-        <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+        <nav class="l-tabs tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
           <?php print $tabs; ?>
         </nav>
       <?php endif; ?>
 
       <?php print $action_links; ?>
 
-      <div class="container container-fluid">
-        <?php if ($content['top']): ?>
-          <div class="row">
-            <div class="l-top col-md-12" role="region">
-              <?php print $content['top']; ?>
-            </div>
-          </div>
-        <?php endif; ?>
-
+      <?php if ($content['top']): ?>
         <div class="row">
-          <div class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-            <?php if ($content['sidebar']): ?>
-            <?php print $content['sidebar']; ?>
-            <?php endif; ?>
-          </div>
-          <main class="l-content col-md-6" role="main" aria-label="<?php print t('Main content'); ?>">
-            <?php if ($content['content']): ?>
-            <?php print $content['content']; ?>
-            <?php endif; ?>
-          </main>
-          <div class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-            <?php if ($content['sidebar2']): ?>
-            <?php print $content['sidebar2']; ?>
-            <?php endif; ?>
+          <div class="l-top col-xs-12" role="region">
+            <?php print $content['top']; ?>
           </div>
         </div>
+      <?php endif; ?>
 
-        <?php if ($content['third1'] || $content['third2'] || $content['third3']): ?>
-          <section class="l-thirds row" role="region">
-            <div class="col-md-4">
-              <?php print $content['third1']; ?>
-            </div>
-            <div class="col-md-4">
-              <?php print $content['third2']; ?>
-            </div>
-            <div class="col-md-4">
-              <?php print $content['third3']; ?>
-            </div>
-          </section>
-        <?php endif; ?>
+      <div class="row">
+        <div class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+          <?php if ($content['sidebar']): ?>
+          <?php print $content['sidebar']; ?>
+          <?php endif; ?>
+        </div>
+        <main class="l-content col-md-6" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php if ($content['content']): ?>
+          <?php print $content['content']; ?>
+          <?php endif; ?>
+        </main>
+        <div class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+          <?php if ($content['sidebar2']): ?>
+          <?php print $content['sidebar2']; ?>
+          <?php endif; ?>
+        </div>
+      </div>
 
-        <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
-          <section class="l-quarter row" role="region">
-            <div class="col-md-3">
-              <?php print $content['quarter1']; ?>
-            </div>
-            <div class="col-md-3">
-              <?php print $content['quarter2']; ?>
-            </div>
-            <div class="col-md-3">
-              <?php print $content['quarter3']; ?>
-            </div>
-            <div class="col-md-3">
-              <?php print $content['quarter4']; ?>
-            </div>
-          </section>
-        <?php endif; ?>
-      </div><!-- /.container -->
+      <?php if ($content['third1'] || $content['third2'] || $content['third3']): ?>
+        <section class="l-thirds row" role="region">
+          <div class="col-md-4">
+            <?php print $content['third1']; ?>
+          </div>
+          <div class="col-md-4">
+            <?php print $content['third2']; ?>
+          </div>
+          <div class="col-md-4">
+            <?php print $content['third3']; ?>
+          </div>
+        </section>
+      <?php endif; ?>
+
+      <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
+        <section class="l-quarter row" role="region">
+          <div class="col-md-3">
+            <?php print $content['quarter1']; ?>
+          </div>
+          <div class="col-md-3">
+            <?php print $content['quarter2']; ?>
+          </div>
+          <div class="col-md-3">
+            <?php print $content['quarter3']; ?>
+          </div>
+          <div class="col-md-3">
+            <?php print $content['quarter4']; ?>
+          </div>
+        </section>
+      <?php endif; ?>
+
     </div><!-- /.l-wrapper-inner -->
 
     <?php if ($content['footer']): ?>

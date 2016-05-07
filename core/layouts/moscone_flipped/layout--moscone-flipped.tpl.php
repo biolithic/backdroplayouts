@@ -38,14 +38,16 @@
     </header>
   <?php endif; ?>
 
-  <?php if ($messages): ?>
-    <div class="l-messages container" role="status" aria-label="<?php print t('Status messages'); ?>">
-      <?php print $messages; ?>
-    </div>
-  <?php endif; ?>
-
   <div class="l-wrapper">
     <div class="l-wrapper-inner container container-fluid">
+
+      <?php if ($messages): ?>
+        <div class="l-messages row" role="status" aria-label="<?php print t('Status messages'); ?>">
+          <div class="col-xs-12">
+            <?php print $messages; ?>
+          </div>
+        </div>
+      <?php endif; ?>
 
       <div class="l-page-header row">
         <a id="main-content"></a>
