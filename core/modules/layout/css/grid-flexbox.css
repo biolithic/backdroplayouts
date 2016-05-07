@@ -184,6 +184,11 @@
   padding-left: .9375rem;
   box-sizing: border-box;
   width: 100%;
+  /**
+   * Fix for Chrome bug.
+   * @see https://bugs.chromium.org/p/chromium/issues/detail?id=546034#c6
+   */
+  min-width: 0;
 }
 
 .col-xs-1 {
