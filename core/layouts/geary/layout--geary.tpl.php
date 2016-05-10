@@ -17,7 +17,7 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['top']
- *   - $content['third']
+ *   - $content['third1']
  *   - $content['third2']
  *   - $content['third3']
  *   - $content['bottom']
