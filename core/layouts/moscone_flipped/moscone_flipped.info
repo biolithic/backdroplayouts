@@ -6,7 +6,7 @@ type = layout
 ; Specify regions for this layout.
 regions[header]      = Header
 regions[top]         = Top
-regions[sidebar]     = Sidebar
+regions[sidebar1]     = Sidebar
 regions[content]     = Content
 regions[bottom]      = Bottom
 regions[footer]      = Footer

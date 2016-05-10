@@ -27,38 +27,36 @@
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="container container-fluid">
-        <div class="row">
-          <?php print $content['header']; ?>
-        </div><!-- /.row -->
+      <div class="l-header-inner container container-fluid">
+        <?php print $content['header']; ?>
       </div><!-- /.container -->
     </header>
   <?php endif; ?>
 
-  <div class="l-wrapper">
-    <div class="l-wrapper-inner container container-fluid">
+  <main class="l-wrapper">
+    <section class="l-wrapper-inner">
 
       <?php if ($messages): ?>
-        <div class="l-messages row" role="status" aria-label="<?php print t('Status messages'); ?>">
-          <div class="col-xs-12">
+        <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
+          <div class="l-messages-inner container container-fluid">
             <?php print $messages; ?>
           </div>
         </div>
       <?php endif; ?>
 
-      <div class="l-page-header row">
-        <a id="main-content"></a>
-        <?php print render($title_prefix); ?>
-        <?php if ($title): ?>
-          <div class="col-xs-12">
+      <header class="l-page-header">
+        <div class="l-page-header-inner container container-fluid">
+          <a id="main-content"></a>
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
             <h1 class="title" id="page-title"><?php print $title; ?></h1>
-          </div>
-        <?php endif; ?>
-        <?php print render($title_suffix); ?>
-      </div>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
+        </div>
+      </header>
 
       <?php if ($tabs): ?>
-        <nav class="tabs row" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+        <nav class="tabs container container-fluid" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
           <?php print $tabs; ?>
         </nav>
       <?php endif; ?>
@@ -74,15 +72,18 @@
       <?php endif; ?>
     </div><!-- /.l-wrapper-inner /.container -->
 
-    <?php if ($content['footer']): ?>
-      <footer class="l-footer"  role="footer">
-        <div class="container container-fluid">
-          <div class="row">
-            <?php print $content['footer']; ?>
-          </div><!-- /.row -->
-        </div><!-- /.container -->
-      </footer>
-    <?php endif; ?>
+    </section><!-- /.l-wrapper-inner -->
+  </main><!-- /.l-wrapper -->
 
-  </div><!-- /.l-wrapper -->
+  <?php if ($content['footer']): ?>
+    <footer class="l-footer"  role="footer">
+      <div class="l-footer-inner container container-fluid">
+        <div class="l-footer-inner-2 row">
+          <div class="l-footer-region col-md-12">
+            <?php print $content['footer']; ?>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </footer>
+  <?php endif; ?>
 </div><!-- /.boxton -->
