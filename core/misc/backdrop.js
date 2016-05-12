@@ -486,4 +486,29 @@ Backdrop.theme.prototype = {
   }
 };
 
+/**
+ * Add helper functions for feature detection
+ */
+Backdrop.featureDetect = {};
+
+/**
+ * Flexbox feature detection
+ * Testing for flex-wrap as it's typically most important in flexbox layouts
+ *
+ * @return {boolean} True if browser supports flex-wrap
+ */
+Backdrop.featureDetect.flexbox = function() {
+  var $body = $('body'),
+      $flexboxTestElement = $('<div style="display: flex; flex-wrap: wrap; width: 0; height: 0;"></div>');
+
+  $body.append($flexboxTestElement);
+
+  if ($flexboxTestElement.css('flex-wrap')) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
 })(jQuery);
