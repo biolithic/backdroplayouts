@@ -501,14 +501,25 @@ Backdrop.featureDetect.flexbox = function() {
   var $body = $('body'),
       $flexboxTestElement = $('<div style="display: flex; flex-wrap: wrap; width: 0; height: 0;"></div>');
 
-  $body.append($flexboxTestElement);
-
-  if ($flexboxTestElement.css('flex-wrap')) {
+  if ($body.hasClass('has-flexbox')) {
     return true;
-  }
-  else {
+  } else if ($body.hasClass('no-flexbox')) {
     return false;
+  } else {
+    $body.append($flexboxTestElement);
+
+    if ($flexboxTestElement.css('flex-wrap')) {
+      $body.addClass('has-flexbox');
+      $flexboxTestElement.remove();
+      return true;
+    }
+    else {
+      $body.addClass('no-flexbox');
+      $flexboxTestElement.remove();
+      return false;
+    }
   }
+
 }
 
 })(jQuery);

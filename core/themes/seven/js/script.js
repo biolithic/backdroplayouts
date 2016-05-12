@@ -282,7 +282,7 @@ Backdrop.behaviors.responsivePrimaryTabs = {
     // Append an invisible element that will be monospace font or our desired
     // font. We're using a repeating i because the characters width will
     // drastically change when it's monospace vs. proportional font.
-    var $checkFontElement = $('<span id="check-font" style="visibility: hidden;">iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</span>');
+    var $checkFontElement = $('<span id="check-font" style="visibility: hidden;" aria-hidden>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</span>');
     $checkFontElement.appendTo($body).wrap('<span id="check-font-wrapper"></span>');
 
     // Function to check the width of the font, if it's substantially different
@@ -296,6 +296,7 @@ Backdrop.behaviors.responsivePrimaryTabs = {
         clearInterval(checkFontInterval);
         $checkFontElement.remove();
         calculateTabWidths();
+        $('#check-font-wrapper').remove();
       }
       checkFontCounter++;
     }
