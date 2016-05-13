@@ -49,8 +49,8 @@ drupal_add_js('core/modules/layout/js/grid-fallback.js');
         </div>
       <?php endif; ?>
 
-      <header class="l-page-header">
-        <div class="l-page-header-inner container container-fluid">
+      <header class="l-page-title">
+        <div class="l-page-title-inner container container-fluid">
           <a id="main-content"></a>
           <?php print render($title_prefix); ?>
           <?php if ($title): ?>

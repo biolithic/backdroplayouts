@@ -28,7 +28,7 @@
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
 
-<?php if ($content['header']): ?>
+  <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
       <div class="l-header-inner container container-fluid">
         <?php print $content['header']; ?>
@@ -47,8 +47,8 @@
         </div>
       <?php endif; ?>
 
-      <header class="l-page-header">
-        <div class="l-page-header-inner container container-fluid">
+      <header class="l-page-title">
+        <div class="l-page-title-inner container container-fluid">
           <a id="main-content"></a>
           <?php print render($title_prefix); ?>
           <?php if ($title): ?>
