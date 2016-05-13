@@ -56,3 +56,15 @@ function basis_breadcrumb($variables) {
   }
   return $output;
 }
+
+/**
+ * Overrides theme_tablesort_indicator().
+ */
+function basis_tablesort_indicator($variables) {
+  if ($variables['style'] == "asc") {
+    return '<span class="table-sort table-sort-ascending"><span class="element-invisible">' . t('sorted ascending') . '</span></span>';
+  }
+  else {
+    return '<span class="table-sort table-sort-descending"><span class="element-invisible">' . t('sorted descending') . '</span></span>';
+  }
+}
