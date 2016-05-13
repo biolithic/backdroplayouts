@@ -12,6 +12,10 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .no-flexbox .cards-inner-wrapper .card {
+    display: block;
+    float: left;
+  }
 }
 
 .card {

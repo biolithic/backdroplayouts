@@ -22,7 +22,7 @@
 }
 
 @media (min-width: 35em) {
-  .l-header-innermost-wrapper {
+  .l-header-inner {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -31,6 +31,10 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     min-height: 6.125rem;
+  }
+
+  .no-flexbox .block {
+    float: left;
   }
 }
 
@@ -391,6 +395,11 @@
   padding: 0;
 }
 
+.no-flexbox .flex-gallery-item {
+  display: block;
+  float: left;
+}
+
 .flex-gallery-item {
   max-width: 100%;
   padding: 0 1em 1em 0;
@@ -432,4 +441,16 @@
 
 .view-mode-teaser .content {
   margin: 0 0 1.5rem;
+}
+
+.no-flexbox .l-header .block,
+.no-flexbox .l-header .block > div,
+/* @todo Want to disable header menu and remove from core */
+.no-flexbox .l-header .header-identity-wrapper,
+.no-flexbox .l-header .header-menu,
+.no-flexbox .l-header .links,
+.no-flexbox .l-header .links > li,
+.no-flexbox .header-name-and-slogan-wrapper {
+  display: block;
+  float: left;
 }

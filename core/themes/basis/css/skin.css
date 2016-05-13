@@ -1389,6 +1389,16 @@ ul.pager {
   color: #fff;
 }
 
+.no-flexbox .pager-first,
+.no-flexbox .pager-previous,
+.no-flexbox .pager-ellipsis,
+.no-flexbox .pager-current,
+.no-flexbox .pager-next,
+.no-flexbox .pager-last,
+.no-flexbox .pager-item {
+  float: left;
+}
+
 .pager-ellipsis {
   color: #586172;
   padding-left: 0;
