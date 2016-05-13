@@ -13,4 +13,6 @@ Backdrop.behaviors.toggles = {
   }
 }
 
+Backdrop.featureDetect.flexbox();
+
 })(jQuery);
