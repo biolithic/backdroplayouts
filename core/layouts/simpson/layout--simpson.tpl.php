@@ -100,35 +100,43 @@ drupal_add_js('core/modules/layout/js/grid-fallback.js');
         </div>
       </div>
 
-      <?php if ($content['third1'] || $content['third2'] || $content['third3']): ?>
-        <section class="l-thirds row" role="region">
-          <div class="col-md-4">
-            <?php print $content['third1']; ?>
+      <?php if (!empty($content['third1']) || !empty($content['third2']) || !empty($content['third3'])): ?>
+        <div class="l-thirds">
+          <div class="container container-fluid l-thirds-inner">
+            <div class="row l-thirds-inner-2">
+              <div class="col-md-4 l-thirds-region">
+                <?php print $content['third1']; ?>
+              </div>
+              <div class="col-md-4 l-thirds-region">
+                <?php print $content['third2']; ?>
+              </div>
+              <div class="col-md-4 l-thirds-region">
+                <?php print $content['third3']; ?>
+              </div>
+            </div>
           </div>
-          <div class="col-md-4">
-            <?php print $content['third2']; ?>
-          </div>
-          <div class="col-md-4">
-            <?php print $content['third3']; ?>
-          </div>
-        </section>
+        </div>
       <?php endif; ?>
 
-      <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
-        <section class="l-quarter row" role="region">
-          <div class="col-md-3">
-            <?php print $content['quarter1']; ?>
+      <?php if (!empty($content['quarter1']) || !empty($content['quarter2']) || !empty($content['quarter3']) || !empty($content['quarter4'])): ?>
+        <div class="l-quarters">
+          <div class="container container-fluid l-quarters-inner">
+            <div class="row l-quarters-inner-2">
+              <div class="col-md-3 l-quarters-region">
+                <?php print $content['quarter1']; ?>
+              </div>
+              <div class="col-md-3 l-quarters-region">
+                <?php print $content['quarter2']; ?>
+              </div>
+              <div class="col-md-3 l-quarters-region">
+                <?php print $content['quarter3']; ?>
+              </div>
+              <div class="col-md-3 l-quarters-region">
+                <?php print $content['quarter4']; ?>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3">
-            <?php print $content['quarter2']; ?>
-          </div>
-          <div class="col-md-3">
-            <?php print $content['quarter3']; ?>
-          </div>
-          <div class="col-md-3">
-            <?php print $content['quarter4']; ?>
-          </div>
-        </section>
+        </div>
       <?php endif; ?>
 
       <?php if (!empty($content['bottom'])): ?>
