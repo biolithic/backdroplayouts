@@ -23,6 +23,7 @@
  *   - $content['bottom']
  *   - $content['footer']
  */
+drupal_add_js('core/modules/layout/js/grid-fallback.js');
 ?>
 <div class="layout--taylor-flipped <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
@@ -31,7 +32,7 @@
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="l-header-inner container container-fluid">
+      <div class="container container-fluid l-header-inner">
         <?php print $content['header']; ?>
       </div><!-- /.container -->
     </header>
@@ -42,14 +43,14 @@
 
       <?php if ($messages): ?>
         <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
-          <div class="l-messages-inner container container-fluid">
+          <div class="container container-fluid l-messages-inner">
             <?php print $messages; ?>
           </div>
         </div>
       <?php endif; ?>
 
       <header class="l-page-title">
-        <div class="l-page-title-inner container container-fluid">
+        <div class="container container-fluid l-page-title-inner">
           <a id="main-content"></a>
           <?php print render($title_prefix); ?>
           <?php if ($title): ?>
@@ -60,7 +61,7 @@
       </header>
 
       <?php if ($tabs): ?>
-        <nav class="tabs container container-fluid" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+        <nav class="container container-fluid tabs" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
           <?php print $tabs; ?>
         </nav>
       <?php endif; ?>
@@ -69,7 +70,7 @@
 
       <?php if (!empty($content['top'])): ?>
         <div class="l-top">
-          <div class="l-top-inner container container-fluid">
+          <div class="container container-fluid l-top-inner">
             <?php print $content['top']; ?>
           </div>
         </div>
@@ -86,7 +87,7 @@
           <?php print $content['sidebar2']; ?>
           <?php endif; ?>
         </div>
-        <main class="l-content col-md-6 main" role="main" aria-label="<?php print t('Main content'); ?>">
+        <main class="col-md-6 l-content" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php if ($content['content']): ?>
           <?php print $content['content']; ?>
           <?php endif; ?>
@@ -95,9 +96,9 @@
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">
-          <div class="l-bottom-inner container container-fluid">
-            <div class="l-bottom-inner-2 row">
-              <div class="l-bottom-region col-md-12">
+          <div class="container container-fluid l-bottom-inner">
+            <div class="row l-bottom-inner-2">
+              <div class="col-md-12 l-bottom-region">
                 <?php print $content['bottom']; ?>
               </div>
             </div>
@@ -111,9 +112,9 @@
 
   <?php if ($content['footer']): ?>
     <footer class="l-footer"  role="footer">
-      <div class="l-footer-inner container container-fluid">
-        <div class="l-footer-inner-2 row">
-          <div class="l-footer-region col-md-12">
+      <div class="container container-fluid l-footer-inner">
+        <div class="row l-footer-inner-2">
+          <div class="col-md-12 l-footer-region">
             <?php print $content['footer']; ?>
           </div>
         </div><!-- /.row -->
