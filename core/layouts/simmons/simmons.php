@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * PHP functions for the simpson layout.
+ * PHP functions for the simmons layout.
  */
 
 /**
- * Process variables for the simpson layout.
+ * Process variables for the simmons layout.
  */
-function template_preprocess_layout__simpson(&$variables) {
+function template_preprocess_layout__simmons(&$variables) {
   if ($variables['content']['sidebar'] && $variables['content']['sidebar2']) {
     $variables['classes'][] = 'layout-two-sidebars';
   }

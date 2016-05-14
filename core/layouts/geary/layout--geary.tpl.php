@@ -20,7 +20,7 @@
  *   - $content['third1']
  *   - $content['third2']
  *   - $content['third3']
- *   - $content['bottom']
+ *   - $content['content']
  *   - $content['bottom']
  *   - $content['footer']
  */

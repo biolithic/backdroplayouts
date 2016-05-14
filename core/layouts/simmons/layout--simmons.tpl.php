@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for the Simpson layout.
+ * Template for the Simmons layout.
  *
  * Variables:
  * - $title: The page title, for use in the actual HTML content.
@@ -31,7 +31,7 @@
  */
 drupal_add_js('core/modules/layout/js/grid-fallback.js');
 ?>
-<div class="layout--simpson <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
+<div class="layout--simmons <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
@@ -166,4 +166,4 @@ drupal_add_js('core/modules/layout/js/grid-fallback.js');
       </div><!-- /.container -->
     </footer>
   <?php endif; ?>
-</div><!-- /.simpson -->
+</div><!-- /.simmons -->

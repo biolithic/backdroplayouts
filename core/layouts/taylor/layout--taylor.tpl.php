@@ -83,8 +83,8 @@ drupal_add_js('core/modules/layout/js/grid-fallback.js');
           <?php endif; ?>
         </main>
         <aside class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar']): ?>
-          <?php print $content['sidebar']; ?>
+          <?php if ($content['sidebar1']): ?>
+          <?php print $content['sidebar1']; ?>
           <?php endif; ?>
         </aside>
         <aside class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">

@@ -1,4 +1,4 @@
-name = Simpson
+name = Simmons
 version = BACKDROP_VERSION
 backdrop = 1.x
 type = layout
@@ -19,10 +19,10 @@ regions[quarter4]     = Quarter Fourth
 regions[footer]       = Footer
 
 ; Preview
-preview = simpson.png
+preview = simmons.png
 
 ; Include the Bootstrap4 Grid System
 libraries[] = bootstrap4-gs
 
 ; Include file for special preprocessing of this layout's variables.
-file = simpson.php
+file = simmons.php
