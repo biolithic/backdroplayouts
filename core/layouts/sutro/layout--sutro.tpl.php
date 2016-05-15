@@ -70,9 +70,7 @@
 
       <?php if (!empty($content['top'])): ?>
         <div class="l-top">
-          <div class="container container-fluid l-top-inner">
-            <?php print $content['top']; ?>
-          </div>
+          <?php print $content['top']; ?>
         </div>
       <?php endif; ?>
 
@@ -97,13 +95,7 @@
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">
-          <div class="container container-fluid l-bottom-inner">
-            <div class="row l-bottom-inner-2">
-              <div class="col-md-12 l-bottom-region">
-                <?php print $content['bottom']; ?>
-              </div>
-            </div>
-          </div>
+          <?php print $content['bottom']; ?>
         </div>
       <?php endif; ?>
 
