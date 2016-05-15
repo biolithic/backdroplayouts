@@ -27,6 +27,7 @@
  *   - $content['quarter2']
  *   - $content['quarter3']
  *   - $content['quarter4']
+ *   - $content['bottom']
  *   - $content['footer']
  */
 ?>
