@@ -17,6 +17,7 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['top']
+ *   - $content['content']
  *   - $content['quarter1']
  *   - $content['quarter2']
  *   - $content['quarter3']
@@ -67,6 +68,12 @@
       <?php if (!empty($content['top'])): ?>
         <div class="l-top">
           <?php print $content['top']; ?>
+        </div>
+      <?php endif; ?>
+
+       <?php if (!empty($content['content'])): ?>
+        <div class="l-content" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php print $content['content']; ?>
         </div>
       <?php endif; ?>
 

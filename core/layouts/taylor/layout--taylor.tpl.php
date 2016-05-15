@@ -76,7 +76,7 @@
         <div class="l-sidebar l-sidebar-first col-md-3">
           <?php print $content['sidebar1']; ?>
         </div>
-        <div class="l-sidebar l-sidebar-first col-md-3">
+        <div class="l-sidebar l-sidebar-second col-md-3">
           <?php print $content['sidebar2']; ?>
         </div>
       </div>

@@ -6,6 +6,7 @@ type = layout
 ; Specify regions for this layout.
 regions[header]       = Header
 regions[top]          = Top
+regions[content]      = Content
 regions[half1]        = Half First
 regions[half2]        = Half Second
 regions[bottom]       = Bottom

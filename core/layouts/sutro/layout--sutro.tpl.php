@@ -70,6 +70,12 @@
         </div>
       <?php endif; ?>
 
+      <?php if (!empty($content['content'])): ?>
+        <div class="l-content" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php print $content['content']; ?>
+        </div>
+      <?php endif; ?>
+
       <div class="l-middle l-halves row">
         <div class="l-halves-region col-md-6">
           <?php print $content['half1']; ?>
