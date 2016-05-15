@@ -42,25 +42,21 @@
 
       <?php if ($messages): ?>
         <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
-          <div class="container container-fluid l-messages-inner">
-            <?php print $messages; ?>
-          </div>
+          <?php print $messages; ?>
         </div>
       <?php endif; ?>
 
-      <header class="l-page-title">
-        <div class="container container-fluid l-page-title-inner">
-          <a id="main-content"></a>
-          <?php print render($title_prefix); ?>
-          <?php if ($title): ?>
-            <h1 class="title" id="page-title"><?php print $title; ?></h1>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
-        </div>
-      </header>
+      <div class="l-page-title">
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title"><?php print $title; ?></h1>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
+      </div>
 
       <?php if ($tabs): ?>
-        <nav class="container container-fluid tabs" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
           <?php print $tabs; ?>
         </nav>
       <?php endif; ?>
