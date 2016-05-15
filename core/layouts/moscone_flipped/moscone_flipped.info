@@ -11,6 +11,15 @@ regions[content]     = Content
 regions[bottom]      = Bottom
 regions[footer]      = Footer
 
+; The default region automatically receives the "Main Content" block if needed.
+default region = content
+
+; Include a file for special preprocessing of this layout's variables.
+; file = moscone-flipped.php
+
+; Default stylesheets for this layout
+; stylesheets[all][] = moscone-flipped.css
+
 ; Preview
 preview = moscone-flipped.png
 

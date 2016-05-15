@@ -16,6 +16,12 @@ regions[footer]     = Footer
 ; The default region automatically receives the "Main Content" block if needed.
 default region = third2
 
+; Include a file for special preprocessing of this layout's variables.
+; file = geary.php
+
+; Default stylesheets for this layout
+; stylesheets[all][] = geary.css
+
 ; Preview
 preview = geary.png
 

@@ -13,6 +13,12 @@ regions[footer]     = Footer
 ; The default region automatically receives the "Main Content" block if needed.
 default region = content
 
+; Include a file for special preprocessing of this layout's variables.
+; file = boxton.php
+
+; Default stylesheets for this layout
+; stylesheets[all][] = boxton.css
+
 ; Preview
 preview = boxton.png
 

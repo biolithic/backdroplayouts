@@ -15,6 +15,12 @@ regions[footer]       = Footer
 ; The default region automatically receives the "Main Content" block if needed.
 default region = half1
 
+; Include a file for special preprocessing of this layout's variables.
+; file = sutro.php
+
+; Default stylesheets for this layout
+; stylesheets[all][] = sutro.css
+
 ; Preview
 preview = sutro.png
 
