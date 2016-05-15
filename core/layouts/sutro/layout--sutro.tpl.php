@@ -85,19 +85,15 @@ drupal_add_js('core/modules/layout/js/grid-fallback.js');
         </div>
       <?php endif; ?>
 
-      <?php if (!empty($content['half1']) || !empty($content['half2']) ): ?>
-        <div class="l-halfs">
-          <div class="container container-fluid l-halfs-inner">
-            <div class="row l-halfs-inner-2">
-              <div class="col-md-6 l-halfs-region">
-                <?php print $content['half1']; ?>
-              </div>
-              <div class="col-md-6 l-halfs-region">
-                <?php print $content['half2']; ?>
-              </div>
-            </div>
+      <?php if ($content['half1'] || $content['half2']): ?>
+        <section class="l-halfs row" role="region">
+          <div class="col-md-6">
+            <?php print $content['half1']; ?>
           </div>
-        </div>
+          <div class="col-md-6">
+            <?php print $content['half2']; ?>
+          </div>
+        </section>
       <?php endif; ?>
 
       <?php if (!empty($content['bottom'])): ?>
