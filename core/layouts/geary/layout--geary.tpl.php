@@ -24,7 +24,6 @@
  *   - $content['bottom']
  *   - $content['footer']
  */
-drupal_add_js('core/modules/layout/js/grid-fallback.js');
 ?>
 <div class="layout--geary <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">

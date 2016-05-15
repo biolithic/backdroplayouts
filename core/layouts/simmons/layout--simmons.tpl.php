@@ -29,7 +29,6 @@
  *   - $content['quarter4']
  *   - $content['footer']
  */
-drupal_add_js('core/modules/layout/js/grid-fallback.js');
 ?>
 <div class="layout--simmons <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
