@@ -74,24 +74,14 @@
         </div>
       <?php endif; ?>
 
-      <?php if ($content['content']): ?>
-        <div class="row">
-          <main class="col-md-12 l-content" role="main" aria-label="<?php print t('Main content'); ?>">
-            <?php print $content['content']; ?>
-          </main>
+      <div class="l-middle l-halves row">
+        <div class="l-halves-region col-md-6">
+          <?php print $content['half1']; ?>
         </div>
-      <?php endif; ?>
-
-      <?php if ($content['half1'] || $content['half2']): ?>
-        <section class="l-halfs row" role="region">
-          <div class="col-md-6">
-            <?php print $content['half1']; ?>
-          </div>
-          <div class="col-md-6">
-            <?php print $content['half2']; ?>
-          </div>
-        </section>
-      <?php endif; ?>
+        <div class="l-halves-region col-md-6">
+          <?php print $content['half2']; ?>
+        </div>
+      </div>
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">

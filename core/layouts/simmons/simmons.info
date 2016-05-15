@@ -7,7 +7,7 @@ type = layout
 regions[header]       = Header
 regions[top]          = Top
 regions[content]      = Content
-regions[sidebar1]      = First Sidebar
+regions[sidebar]      = First Sidebar
 regions[sidebar2]     = Second Sidebar
 regions[third1]       = Tryptych First
 regions[third2]       = Tryptych Second
@@ -16,6 +16,7 @@ regions[quarter1]     = Quarter First
 regions[quarter2]     = Quarter Second
 regions[quarter3]     = Quarter Third
 regions[quarter4]     = Quarter Fourth
+regions[bottom]       = Bottom
 regions[footer]       = Footer
 
 ; Preview

@@ -67,11 +67,9 @@
         </div>
       <?php endif; ?>
 
-      <?php if ($content['content']): ?>
-        <main class="col-md-12 l-content" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php print $content['content']; ?>
-        </main>
-      <?php endif; ?>
+      <div class="l-content" role="main" aria-label="<?php print t('Main content'); ?>">
+        <?php print $content['content']; ?>
+      </div>
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">

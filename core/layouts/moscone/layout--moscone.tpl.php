@@ -72,21 +72,20 @@
         </div>
       <?php endif; ?>
 
-
-      <div class="row">
+      <div class="l-middle row">
         <div class="l-sidebar l-sidebar-first col-md-3">
-          <?php print $content['sidebar1']; ?>
+          <?php print $content['sidebar']; ?>
         </div>
-        <div class="col-md-9 l-content">
+        <div class="l-content col-md-9" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $content['content']; ?>
         </div>
       </div>
 
-    <?php if (!empty($content['bottom'])): ?>
-      <div class="l-bottom">
-        <?php print $content['bottom']; ?>
-      </div>
-    <?php endif; ?>
+      <?php if (!empty($content['bottom'])): ?>
+        <div class="l-bottom">
+          <?php print $content['bottom']; ?>
+        </div>
+      <?php endif; ?>
 
     </div><!-- /.l-wrapper-inner /.container -->
 

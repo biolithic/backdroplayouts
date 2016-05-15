@@ -73,17 +73,17 @@
         </div>
       <?php endif; ?>
 
-        <div class="row">
-          <div class="l-sidebar l-sidebar-first col-md-3">
-            <?php print $content['sidebar1']; ?>
-          </div>
-          <div class="col-md-6 l-content">
-            <?php print $content['content']; ?>
-          </div>
-          <div class="l-sidebar l-sidebar-second col-md-3">
-            <?php print $content['sidebar2']; ?>
-          </div>
+      <div class="l-middle row">
+        <div class="l-sidebar l-sidebar-first col-md-3">
+          <?php print $content['sidebar']; ?>
         </div>
+        <div class="l-content col-md-6" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php print $content['content']; ?>
+        </div>
+        <div class="l-sidebar l-sidebar-second col-md-3">
+          <?php print $content['sidebar2']; ?>
+        </div>
+      </div>
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">

@@ -81,53 +81,47 @@
         </div>
       <?php endif; ?>
 
-      <div class="row">
-        <div class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar1']): ?>
-          <?php print $content['sidebar1']; ?>
-          <?php endif; ?>
+      <div class="l-middle row">
+        <div class="l-sidebar l-sidebar-first col-md-3">
+          <?php print $content['sidebar']; ?>
         </div>
-        <main class="col-md-6 l-content" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php if ($content['content']): ?>
+        <div class="l-content col-md-6" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $content['content']; ?>
-          <?php endif; ?>
-        </main>
-        <div class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar2']): ?>
+        </div>
+        <div class="l-sidebar l-sidebar-second col-md-3">
           <?php print $content['sidebar2']; ?>
-          <?php endif; ?>
         </div>
       </div>
 
       <?php if ($content['third1'] || $content['third2'] || $content['third3']): ?>
-        <section class="l-thirds row" role="region">
-          <div class="col-md-4">
+        <div class="l-thirds row">
+          <div class="l-thirds-region col-md-4">
             <?php print $content['third1']; ?>
           </div>
-          <div class="col-md-4">
+          <div class="l-thirds-region col-md-4">
             <?php print $content['third2']; ?>
           </div>
-          <div class="col-md-4">
+          <div class="l-thirds-region col-md-4">
             <?php print $content['third3']; ?>
           </div>
-        </section>
+        </div>
       <?php endif; ?>
 
       <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
-        <section class="l-quarter row" role="region">
-          <div class="col-md-3">
+        <div class="l-quarters row">
+          <div class="l-quarters-region col-md-3">
             <?php print $content['quarter1']; ?>
           </div>
-          <div class="col-md-3">
+          <div class="l-quarters-region col-md-3">
             <?php print $content['quarter2']; ?>
           </div>
-          <div class="col-md-3">
+          <div class="l-quarters-region col-md-3">
             <?php print $content['quarter3']; ?>
           </div>
-          <div class="col-md-3">
+          <div class="l-quarters-region col-md-3">
             <?php print $content['quarter4']; ?>
           </div>
-        </section>
+        </div>
       <?php endif; ?>
 
       <?php if (!empty($content['bottom'])): ?>

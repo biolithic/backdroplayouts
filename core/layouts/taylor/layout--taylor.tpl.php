@@ -73,23 +73,16 @@
         </div>
       <?php endif; ?>
 
-
-      <div class="row">
-        <main class="col-md-6 l-content" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php if ($content['content']): ?>
+      <div class="l-middle row">
+        <div class="l-content col-md-6" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $content['content']; ?>
-          <?php endif; ?>
-        </main>
-        <aside class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar1']): ?>
+        </div>
+        <div class="l-sidebar l-sidebar-first col-md-3">
           <?php print $content['sidebar1']; ?>
-          <?php endif; ?>
-        </aside>
-        <aside class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar2']): ?>
+        </div>
+        <div class="l-sidebar l-sidebar-first col-md-3">
           <?php print $content['sidebar2']; ?>
-          <?php endif; ?>
-        </aside>
+        </div>
       </div>
 
       <?php if (!empty($content['bottom'])): ?>

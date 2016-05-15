@@ -74,31 +74,17 @@
         </div>
       <?php endif; ?>
 
-      <?php if (!empty($content['third1']) || !empty($content['third2']) || !empty($content['third3'])): ?>
-        <div class="l-thirds">
-          <div class="container container-fluid l-thirds-inner">
-            <div class="row l-thirds-inner-2">
-              <div class="col-md-4 l-thirds-region">
-                <?php print $content['third1']; ?>
-              </div>
-              <div class="col-md-4 l-thirds-region">
-                <?php print $content['third2']; ?>
-              </div>
-              <div class="col-md-4 l-thirds-region">
-                <?php print $content['third3']; ?>
-              </div>
-            </div>
-          </div>
+      <div class="l-middle l-thirds row">
+        <div class="l-thirds-region col-md-4">
+          <?php print $content['third1']; ?>
         </div>
-      <?php endif; ?>
-
-      <?php if ($content['content']): ?>
-        <div class="row">
-          <main class="col-md-12 l-content" role="main" aria-label="<?php print t('Main content'); ?>">
-            <?php print $content['content']; ?>
-          </main>
+        <div class="l-thirds-region col-md-4">
+          <?php print $content['third2']; ?>
         </div>
-      <?php endif; ?>
+        <div class="l-thirds-region col-md-4">
+          <?php print $content['third3']; ?>
+        </div>
+      </div>
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">

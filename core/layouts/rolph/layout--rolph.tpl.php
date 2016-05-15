@@ -74,30 +74,20 @@
         </div>
       <?php endif; ?>
 
-      <?php if ($content['content']): ?>
-        <div class="row">
-          <main class="col-md-12 l-content" role="main" aria-label="<?php print t('Main content'); ?>">
-            <?php print $content['content']; ?>
-          </main>
+      <div class="l-middle l-quarters row">
+        <div class="l-quarters-region col-md-3">
+          <?php print $content['quarter1']; ?>
         </div>
-      <?php endif; ?>
-
-      <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
-        <section class="l-quarter row" role="region">
-          <div class="col-md-3 l-quarter1">
-            <?php print $content['quarter1']; ?>
-          </div>
-          <div class="col-md-3 l-quarter2">
-            <?php print $content['quarter2']; ?>
-          </div>
-          <div class="col-md-3 l-quarter3">
-            <?php print $content['quarter3']; ?>
-          </div>
-          <div class="col-md-3 l-quarter4">
-            <?php print $content['quarter4']; ?>
-          </div>
-        </section>
-      <?php endif; ?>
+        <div class="l-quarters-region col-md-3">
+          <?php print $content['quarter2']; ?>
+        </div>
+        <div class="l-quarters-region col-md-3">
+          <?php print $content['quarter3']; ?>
+        </div>
+        <div class="l-quarters-region col-md-3">
+          <?php print $content['quarter4']; ?>
+        </div>
+      </div>
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">
