@@ -1111,9 +1111,8 @@ function _layout_get_all_info($data_type, $init = array()) {
  * Load the layout information for a single layout name.
  *
  * @param string $layout_name
- *   The name of the layout plugin, e.g. "one_column" or
- *   "three_three_four_column". If no layout name is specified, all layout info
- *   will be returned.
+ *   The name of the layout plugin, e.g. "boxton" or "simmons". If no layout
+ *   name is specified, all layout info will be returned.
  * @return array|boolean
  *   The layout information, as returned by either a stand-alone layout .info
  *   file, or through a module's hook_layout_info().

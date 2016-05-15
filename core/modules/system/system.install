@@ -2121,7 +2121,7 @@ function system_update_1025() {
     'description' => NULL,
     'module' => 'layout',
     'weight' => 1,
-    'layout' => 'one_column',
+    'layout' => 'boxton',
     'settings' => array(),
     'positions' => array(
       'content' => array(

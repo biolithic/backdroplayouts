@@ -1123,9 +1123,9 @@ class LayoutInterfaceTest extends BackdropWebTestCase {
     $layout = layout_load($layout_name);
     $this->assertBlocksMatch($layout, $default_layout);
 
-    // Change the layout to the one_column layout, eliminating the sidebar.
+    // Change the layout to the boxton layout, eliminating the sidebar.
     $edit = array(
-      'layout' => 'one_column',
+      'layout' => 'boxton',
     );
     $this->backdropPost('admin/structure/layouts/manage/' . $layout_name . '/settings', $edit, t('Save layout'));
 
@@ -1711,10 +1711,10 @@ class LayoutHookTestCase extends BackdropWebTestCase {
     ));
 
     // Go to the Default layout's edit page and change the layout to the 
-    // one_column layout.
+    // boxton layout.
     state_set('layout_test', array());
     $edit = array(
-      'layout' => 'one_column',
+      'layout' => 'boxton',
     );
     $this->backdropPost('admin/structure/layouts/manage/default/settings', $edit, t('Save layout'));
     $this->assertHookMessageOrder(array(
