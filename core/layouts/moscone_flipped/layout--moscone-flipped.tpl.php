@@ -73,7 +73,7 @@
           <?php print $content['content']; ?>
         </div>
         <div class="l-sidebar l-sidebar-first col-md-3">
-          <?php print $content['sidebar']; ?>
+          <?php print $content['sidebar1']; ?>
         </div>
       </div>
 

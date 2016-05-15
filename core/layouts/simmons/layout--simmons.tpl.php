@@ -79,13 +79,13 @@
       <?php endif; ?>
 
       <div class="l-middle row">
-        <div class="l-sidebar l-sidebar-first col-md-3">
-          <?php print $content['sidebar']; ?>
+        <div class="l-sidebar l-sidebar-first col-md-3 col-md-first">
+          <?php print $content['sidebar1']; ?>
         </div>
-        <div class="l-content col-md-6" role="main" aria-label="<?php print t('Main content'); ?>">
+        <div class="l-content col-md-6 col-xs-first col-sm-first" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $content['content']; ?>
         </div>
-        <div class="l-sidebar l-sidebar-second col-md-3">
+        <div class="l-sidebar l-sidebar-second col-md-3 col-xs-last col-sm-last">
           <?php print $content['sidebar2']; ?>
         </div>
       </div>

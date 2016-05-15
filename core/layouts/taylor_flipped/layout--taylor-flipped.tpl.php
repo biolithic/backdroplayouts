@@ -70,17 +70,17 @@
       <?php endif; ?>
 
       <div class="row">
-        <div class="l-sidebar l-sidebar-first col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+        <div class="l-sidebar l-sidebar-first col-md-3 col-md-first" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
           <?php if ($content['sidebar1']): ?>
           <?php print $content['sidebar1']; ?>
           <?php endif; ?>
         </div>
-        <div class="l-sidebar l-sidebar-second col-md-3" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
+        <div class="l-sidebar l-sidebar-second col-md-3 col-xs-last col-sm-last" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
           <?php if ($content['sidebar2']): ?>
           <?php print $content['sidebar2']; ?>
           <?php endif; ?>
         </div>
-        <main class="col-md-6 l-content" role="main" aria-label="<?php print t('Main content'); ?>">
+        <main class="col-md-6 col-xs-first col-sm-first col-md-last l-content" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php if ($content['content']): ?>
           <?php print $content['content']; ?>
           <?php endif; ?>

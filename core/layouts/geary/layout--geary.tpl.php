@@ -70,14 +70,20 @@
         </div>
       <?php endif; ?>
 
+      <?php if (!empty($content['content'])): ?>
+        <div class="l-content" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php print $content['content']; ?>
+      </div>
+      <?php endif; ?>
+
       <div class="l-middle l-thirds row">
-        <div class="l-thirds-region col-md-4">
+        <div class="l-thirds-region col-md-4 col-md-first">
           <?php print $content['third1']; ?>
         </div>
-        <div class="l-thirds-region col-md-4">
+        <div class="l-thirds-region col-md-4 col-xs-first col-sm-first">
           <?php print $content['third2']; ?>
         </div>
-        <div class="l-thirds-region col-md-4">
+        <div class="l-thirds-region col-md-4 col-xs-last col-sm-last">
           <?php print $content['third3']; ?>
         </div>
       </div>

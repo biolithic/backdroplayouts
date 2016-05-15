@@ -12,6 +12,15 @@ regions[sidebar2]     = Second Sidebar
 regions[bottom]       = Bottom
 regions[footer]       = Footer
 
+; The default region automatically receives the "Main Content" block if needed.
+default region = content
+
+; Include a file for special preprocessing of this layout's variables.
+; file = taylor.php
+
+; Default stylesheets for this layout
+; stylesheets[all][] = taylor.css
+
 ; Preview
 preview = taylor.png
 

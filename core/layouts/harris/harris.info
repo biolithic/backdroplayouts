@@ -7,10 +7,19 @@ type = layout
 regions[header]     = Header
 regions[top]        = Top
 regions[content]    = Content
-regions[sidebar]    = First Sidebar
+regions[sidebar1]   = First Sidebar
 regions[sidebar2]   = Second Sidebar
 regions[bottom]     = Bottom
 regions[footer]     = Footer
+
+; The default region automatically receives the "Main Content" block if needed.
+default region = content
+
+; Include a file for special preprocessing of this layout's variables.
+; file = harris.php
+
+; Default stylesheets for this layout
+; stylesheets[all][] = harris.css
 
 ; Preview
 preview = harris.png

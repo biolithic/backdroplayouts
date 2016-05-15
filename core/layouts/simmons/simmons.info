@@ -7,7 +7,7 @@ type = layout
 regions[header]       = Header
 regions[top]          = Top
 regions[content]      = Content
-regions[sidebar]      = First Sidebar
+regions[sidebar1]      = First Sidebar
 regions[sidebar2]     = Second Sidebar
 regions[third1]       = Tryptych First
 regions[third2]       = Tryptych Second
@@ -19,6 +19,9 @@ regions[quarter4]     = Quarter Fourth
 regions[bottom]       = Bottom
 regions[footer]       = Footer
 
+; The default region automatically receives the "Main Content" block if needed.
+default region = content
+
 ; Preview
 preview = simmons.png
 
@@ -27,3 +30,6 @@ libraries[] = bootstrap4-gs
 
 ; Include file for special preprocessing of this layout's variables.
 file = simmons.php
+
+; Default stylesheets for this layout
+; stylesheets[all][] = simmons.css
