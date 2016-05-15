@@ -7,7 +7,7 @@
   "module": "layout",
   "weight": 1,
   "storage": 4,
-  "layout": "boxton",
+  "layout_template": "boxton",
   "disabled": false,
   "settings": {
     "title": "",

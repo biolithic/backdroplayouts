@@ -34,7 +34,7 @@ function bartik_css_alter(&$css) {
 function bartik_preprocess_layout(&$variables) {
   if ($variables['content']['header']) {
     $tab_class = theme_get_setting('main_menu_tabs');
-    $variables['content']['header'] = '<div class="l-header-inner col-xs-12 ' . $tab_class . '">' . $variables['content']['header'] . '</div>';
+    $variables['content']['header'] = '<div class="l-header-inner container container-fluid ' . $tab_class . '">' . $variables['content']['header'] . '</div>';
   }
 }
 

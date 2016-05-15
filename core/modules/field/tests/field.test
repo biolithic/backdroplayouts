@@ -3494,7 +3494,7 @@ class FieldBlockTestCase extends FieldTestCase {
     $edit = array(
       'title' => 'Post layout',
       'name' => 'node_post',
-      'layout' => 'moscone_flipped',
+      'layout_template' => 'moscone_flipped',
       'path' => $layout_path,
     );
     // Save directly without checking contexts.

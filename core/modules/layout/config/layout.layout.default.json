@@ -7,7 +7,7 @@
   "module": "layout",
   "weight": 0,
   "storage": 4,
-  "layout": "moscone_flipped",
+  "layout_template": "moscone_flipped",
   "disabled": false,
   "settings": {
     "title": "",
