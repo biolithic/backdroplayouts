@@ -30,14 +30,14 @@
 
   <?php if ($content['header']): ?>
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="container container-fluid l-header-inner">
+      <div class="l-header-inner container container-fluid">
         <?php print $content['header']; ?>
       </div><!-- /.container -->
     </header>
   <?php endif; ?>
 
-  <main class="l-wrapper">
-    <section class="l-wrapper-inner">
+  <div class="l-wrapper">
+    <div class="l-wrapper-inner container container-fluid">
 
       <?php if ($messages): ?>
         <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
@@ -88,19 +88,15 @@
         </div>
       <?php endif; ?>
 
-    </section><!-- /.l-wrapper-inner -->
-  </main><!-- /.l-wrapper -->
+    </div><!-- /.l-wrapper-inner /.container -->
 
+    <?php if ($content['footer']): ?>
+      <footer class="l-footer"  role="footer">
+        <div class="l-footer-inner container container-fluid">
+          <?php print $content['footer']; ?>
+        </div><!-- /.container -->
+      </footer>
+    <?php endif; ?>
 
-  <?php if ($content['footer']): ?>
-    <footer class="l-footer"  role="footer">
-      <div class="container container-fluid l-footer-inner">
-        <div class="row l-footer-inner-2">
-          <div class="col-md-12 l-footer-region">
-            <?php print $content['footer']; ?>
-          </div>
-        </div><!-- /.row -->
-      </div><!-- /.container -->
-    </footer>
-  <?php endif; ?>
+  </div><!-- /.l-wrapper -->
 </div><!-- /.moscone flipped -->
