@@ -234,7 +234,7 @@ function layout_settings_form($form, &$form_state, Layout $layout) {
   $all_template_info = layout_get_layout_template_info();
   foreach ($all_template_info as $template_name => $template_info) {
     // Don't reveal hidden layouts.
-    if ($layout_info['hidden']) {
+    if ($template_info['hidden']) {
       continue;
     }
     $form['layout_template']['#options'][$template_name] = theme('layout_template_options', array('template_info' => $template_info));
@@ -550,7 +550,9 @@ function layout_settings_form_update_layout($form, &$form_state) {
     $layout->name = $form_state['values']['name'];
   }
   if (isset($form_state['values']['layout_template'])) {
-    $layout->setLayoutTemplate($form_state['values']['layout_template']);
+    $new = $form_state['values']['layout_template'];
+    $region_mapping = layout_get_legacy_region_mapping($layout->layout_template, $new);
+    $layout->setLayoutTemplate($form_state['values']['layout_template'], $region_mapping);
   }
   if (isset($form_state['values']['path'])) {
     $layout->setPath($form_state['values']['path']);
@@ -609,6 +611,45 @@ function layout_settings_form_update_layout($form, &$form_state) {
     }
   }
   layout_set_layout_tempstore($layout);
+}
+
+/**
+ * Returns an array of mappings from old region names to new.
+ */
+function layout_get_legacy_region_mapping($old, $new) {
+  $region_mapping = array();
+  $legacy = array('one_column', 'two_column', 'two_column_flipped', 'three_three_four_column');
+  $bootstrap = array('boxton', 'geary', 'harris', 'moscone', 'moscone_flipped', 'rolph', 'simmons', 'sutro', 'taylor', 'taylor_flipped');
+
+  if (in_array($old, $legacy) && in_array($new, $bootstrap)) {
+    $region_mapping = array(
+      'sidebar_first'       => 'sidebar',
+      'sidebar_second'      => 'sidebar2',
+      'triptych_first'      => 'third1',
+      'triptych_middle'     => 'third2',
+      'triptych_last'       => 'third3',
+      'footer_firstcolumn'  => 'quarter1',
+      'footer_secondcolumn' => 'quarter2',
+      'footer_thirdcolumn'  => 'quarter3',
+      'footer_fourthcolumn' => 'quarter4',
+    );
+  }
+
+  if (in_array($old, $bootstrap) && in_array($new, $legacy)) {
+    $region_mapping = array(
+      'sidebar'  => 'sidebar_first',
+      'sidebar2' => 'sidebar_second',
+      'third1'   => 'triptych_first',
+      'third2'   => 'triptych_middle',
+      'third3'   => 'triptych_last',
+      'quarter1' => 'footer_firstcolumn',
+      'quarter2' => 'footer_secondcolumn',
+      'quarter3' => 'footer_thirdcolumn',
+      'quarter4' => 'footer_fourthcolumn',
+    );
+  }
+
+  return $region_mapping;
 }
 
 /**
