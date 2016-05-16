@@ -4,15 +4,15 @@ backdrop = 1.x
 type = layout
 
 ; Specify regions for this layout.
-regions[header]           = Header
-regions[top]              = Top
-regions[content]          = Content
-regions[quarter1]         = First Column
-regions[quarter2]         = Second Column
-regions[quarter3]         = Third Column
-regions[quarter4]         = Fourth Column
-regions[bottom]           = Bottom
-regions[footer]           = Footer
+regions[header]     = Header
+regions[top]        = Top
+regions[content]    = Content
+regions[quarter1]   = First Column
+regions[quarter2]   = Second Column
+regions[quarter3]   = Third Column
+regions[quarter4]   = Fourth Column
+regions[bottom]     = Bottom
+regions[footer]     = Footer
 
 ; The default region automatically receives the "Main Content" block if needed.
 default region = quarter1

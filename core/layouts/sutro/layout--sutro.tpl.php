@@ -34,7 +34,7 @@
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
       <div class="l-header-inner container container-fluid">
         <?php print $content['header']; ?>
-      </div><!-- /.container -->
+      </div>
     </header>
   <?php endif; ?>
 
@@ -83,7 +83,7 @@
         <div class="l-halves-region col-md-6">
           <?php print $content['half2']; ?>
         </div>
-      </div>
+      </div><!-- /.l-middle -->
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">
@@ -91,15 +91,15 @@
         </div>
       <?php endif; ?>
 
-    </div><!-- /.l-wrapper-inner /.container -->
+    </div><!-- /.l-wrapper-inner -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">
         <div class="l-footer-inner container container-fluid">
           <?php print $content['footer']; ?>
-        </div><!-- /.container -->
+        </div>
       </footer>
     <?php endif; ?>
 
   </div><!-- /.l-wrapper -->
-</div><!-- /.sutro -->
+</div><!-- /.layout--sutro -->

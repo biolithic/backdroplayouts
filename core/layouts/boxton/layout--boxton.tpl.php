@@ -31,7 +31,7 @@
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
       <div class="l-header-inner container container-fluid">
         <?php print $content['header']; ?>
-      </div><!-- /.container -->
+      </div>
     </header>
   <?php endif; ?>
 
@@ -77,7 +77,7 @@
         </div>
       <?php endif; ?>
 
-    </div><!-- /.l-wrapper-inner /.container -->
+    </div><!-- /.l-wrapper-inner -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">
@@ -88,4 +88,4 @@
     <?php endif; ?>
 
   </div><!-- /.l-wrapper -->
-</div><!-- /.boxton -->
+</div><!-- /.layout--boxton -->

@@ -17,9 +17,9 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['top']
- *   - $content['sidebar1']
- *   - $content['sidebar2']
  *   - $content['content']
+ *   - $content['sidebar']
+ *   - $content['sidebar2']
  *   - $content['bottom']
  *   - $content['footer']
  */
@@ -33,7 +33,7 @@
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
       <div class="l-header-inner container container-fluid">
         <?php print $content['header']; ?>
-      </div><!-- /.container -->
+      </div>
     </header>
   <?php endif; ?>
 
@@ -69,23 +69,17 @@
         </div>
       <?php endif; ?>
 
-      <div class="row">
-        <div class="l-sidebar l-sidebar-first col-md-3 col-md-first" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar1']): ?>
-          <?php print $content['sidebar1']; ?>
-          <?php endif; ?>
+      <div class="l-middle row">
+        <div class="l-sidebar l-sidebar-first col-md-3">
+          <?php print $content['sidebar']; ?>
         </div>
-        <div class="l-sidebar l-sidebar-second col-md-3 col-xs-last col-sm-last" role="complementary" aria-label="<?php print t('Complementary information to ' . $title); ?>">
-          <?php if ($content['sidebar2']): ?>
+        <div class="l-sidebar l-sidebar-second col-md-3">
           <?php print $content['sidebar2']; ?>
-          <?php endif; ?>
         </div>
-        <main class="col-md-6 col-xs-first col-sm-first col-md-last l-content" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php if ($content['content']): ?>
+        <main class="l-content col-md-6" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $content['content']; ?>
-          <?php endif; ?>
         </main>
-      </div>
+      </div><!-- /.l-middle -->
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">
@@ -93,15 +87,15 @@
         </div>
       <?php endif; ?>
 
-    </div><!-- /.l-wrapper-inner /.container -->
+    </div><!-- /.l-wrapper-inner -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">
         <div class="l-footer-inner container container-fluid">
           <?php print $content['footer']; ?>
-        </div><!-- /.container -->
+        </div>
       </footer>
     <?php endif; ?>
 
   </div><!-- /.l-wrapper -->
-</div><!-- /.taylor flipped -->
+</div><!-- /.layout--taylor-flipped -->

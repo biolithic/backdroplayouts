@@ -17,7 +17,7 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['top']
- *   - $content['sidebar1']
+ *   - $content['sidebar']
  *   - $content['content']
  *   - $content['bottom']
  *   - $content['footer']
@@ -32,7 +32,7 @@
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
       <div class="l-header-inner container container-fluid">
         <?php print $content['header']; ?>
-      </div><!-- /.container -->
+      </div>
     </header>
   <?php endif; ?>
 
@@ -73,9 +73,9 @@
           <?php print $content['content']; ?>
         </div>
         <div class="l-sidebar l-sidebar-first col-md-3">
-          <?php print $content['sidebar1']; ?>
+          <?php print $content['sidebar']; ?>
         </div>
-      </div>
+      </div><!-- /.l-middle -->
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">
@@ -83,15 +83,15 @@
         </div>
       <?php endif; ?>
 
-    </div><!-- /.l-wrapper-inner /.container -->
+    </div><!-- /.l-wrapper-inner -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">
         <div class="l-footer-inner container container-fluid">
           <?php print $content['footer']; ?>
-        </div><!-- /.container -->
+        </div>
       </footer>
     <?php endif; ?>
 
   </div><!-- /.l-wrapper -->
-</div><!-- /.moscone flipped -->
+</div><!-- /.layout--moscone-flipped -->

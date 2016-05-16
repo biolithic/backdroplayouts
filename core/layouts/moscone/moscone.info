@@ -4,12 +4,12 @@ backdrop = 1.x
 type = layout
 
 ; Specify regions for this layout.
-regions[header]      = Header
-regions[top]         = Top
-regions[sidebar1]     = Sidebar
-regions[content]     = Content
-regions[bottom]      = Bottom
-regions[footer]      = Footer
+regions[header]     = Header
+regions[top]        = Top
+regions[sidebar]    = Sidebar
+regions[content]    = Content
+regions[bottom]     = Bottom
+regions[footer]     = Footer
 
 ; The default region automatically receives the "Main Content" block if needed.
 default region = content

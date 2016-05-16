@@ -18,7 +18,7 @@
  *   - $content['header']
  *   - $content['top']
  *   - $content['content']
- *   - $content['sidebar1']
+ *   - $content['sidebar']
  *   - $content['sidebar2']
  *   - $content['third1']
  *   - $content['third2']
@@ -40,7 +40,7 @@
     <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
       <div class="l-header-inner container container-fluid">
         <?php print $content['header']; ?>
-      </div><!-- /.container -->
+      </div>
     </header>
   <?php endif; ?>
 
@@ -80,7 +80,7 @@
 
       <div class="l-middle row">
         <div class="l-sidebar l-sidebar-first col-md-3 col-md-first">
-          <?php print $content['sidebar1']; ?>
+          <?php print $content['sidebar']; ?>
         </div>
         <div class="l-content col-md-6 col-xs-first col-sm-first" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $content['content']; ?>
@@ -88,7 +88,7 @@
         <div class="l-sidebar l-sidebar-second col-md-3 col-xs-last col-sm-last">
           <?php print $content['sidebar2']; ?>
         </div>
-      </div>
+      </div><!-- /.l-middle -->
 
       <?php if ($content['third1'] || $content['third2'] || $content['third3']): ?>
         <div class="l-thirds row">
@@ -101,7 +101,7 @@
           <div class="l-thirds-region col-md-4">
             <?php print $content['third3']; ?>
           </div>
-        </div>
+        </div><!-- /.l-thirds -->
       <?php endif; ?>
 
       <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
@@ -118,7 +118,7 @@
           <div class="l-quarters-region col-md-3">
             <?php print $content['quarter4']; ?>
           </div>
-        </div>
+        </div><!-- /.l-quarters -->
       <?php endif; ?>
 
       <?php if (!empty($content['bottom'])): ?>
@@ -127,15 +127,15 @@
         </div>
       <?php endif; ?>
 
-    </div><!-- /.l-wrapper-inner /.container -->
+    </div><!-- /.l-wrapper-inner -->
 
     <?php if ($content['footer']): ?>
       <footer class="l-footer"  role="footer">
         <div class="l-footer-inner container container-fluid">
           <?php print $content['footer']; ?>
-        </div><!-- /.container -->
+        </div>
       </footer>
     <?php endif; ?>
 
   </div><!-- /.l-wrapper -->
-</div><!-- /.simmons -->
+</div><!-- /.layout--simmons -->
