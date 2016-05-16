@@ -107,9 +107,9 @@
     <div class="l-footer-wrapper">
       <?php if ($content['footer_firstcolumn'] || $content['footer_secondcolumn'] || $content['footer_thirdcolumn'] || $content['footer_fourthcolumn']): ?>
         <div class="l-footer-columns">
-            <div class="l-footer-first-column">
-              <?php print $content['footer_firstcolumn']; ?>
-            </div>
+          <div class="l-footer-first-column">
+            <?php print $content['footer_firstcolumn']; ?>
+          </div>
           <div class="l-footer-second-column">
             <?php print $content['footer_secondcolumn']; ?>
           </div>

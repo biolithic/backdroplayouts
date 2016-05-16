@@ -56,7 +56,7 @@
       </div>
 
       <?php if ($tabs): ?>
-        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin content navigation tabs.'); ?>">
           <?php print $tabs; ?>
         </nav>
       <?php endif; ?>
@@ -70,13 +70,13 @@
       <?php endif; ?>
 
       <div class="l-middle row">
-        <div class="l-sidebar l-sidebar-first col-md-3 col-md-first">
-          <?php print $content['sidebar']; ?>
-        </div>
-        <div class="l-content col-md-6 col-xs-first col-sm-first" role="main" aria-label="<?php print t('Main content'); ?>">
+        <div class="l-content col-md-6 col-md-push-3" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $content['content']; ?>
         </div>
-        <div class="l-sidebar l-sidebar-second col-md-3 col-xs-last col-sm-last">
+        <div class="l-sidebar l-sidebar-first col-md-3 col-md-pull-6">
+          <?php print $content['sidebar']; ?>
+        </div>
+        <div class="l-sidebar l-sidebar-second col-md-3">
           <?php print $content['sidebar2']; ?>
         </div>
       </div><!-- /.l-middle -->
@@ -88,14 +88,13 @@
       <?php endif; ?>
 
     </div><!-- /.l-wrapper-inner -->
-
-    <?php if ($content['footer']): ?>
-      <footer class="l-footer"  role="footer">
-        <div class="l-footer-inner container container-fluid">
-          <?php print $content['footer']; ?>
-        </div>
-      </footer>
-    <?php endif; ?>
-
   </div><!-- /.l-wrapper -->
+
+  <?php if ($content['footer']): ?>
+    <footer class="l-footer"  role="footer">
+      <div class="l-footer-inner container container-fluid">
+        <?php print $content['footer']; ?>
+      </div>
+    </footer>
+  <?php endif; ?>
 </div><!-- /.layout--harris -->

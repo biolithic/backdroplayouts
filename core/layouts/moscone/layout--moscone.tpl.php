@@ -17,8 +17,8 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['top']
- *   - $content['sidebar']
  *   - $content['content']
+ *   - $content['sidebar']
  *   - $content['bottom']
  *   - $content['footer']
  */
@@ -55,7 +55,7 @@
       </div>
 
       <?php if ($tabs): ?>
-        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin content navigation tabs.'); ?>">
           <?php print $tabs; ?>
         </nav>
       <?php endif; ?>
@@ -69,10 +69,10 @@
       <?php endif; ?>
 
       <div class="l-middle row">
-        <div class="l-sidebar l-sidebar-first col-md-3 col-xs-last col-sm-last col-md-first">
+        <div class="l-sidebar l-sidebar-first col-md-3">
           <?php print $content['sidebar']; ?>
         </div>
-        <div class="l-content col-md-9 col-xs-first col-sm-first" role="main" aria-label="<?php print t('Main content'); ?>">
+        <div class="l-content col-md-9" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $content['content']; ?>
         </div>
       </div><!-- /.l-middle -->
@@ -84,14 +84,13 @@
       <?php endif; ?>
 
     </div><!-- /.l-wrapper-inner -->
-
-    <?php if ($content['footer']): ?>
-      <footer class="l-footer"  role="footer">
-        <div class="l-footer-inner container container-fluid">
-          <?php print $content['footer']; ?>
-        </div>
-      </footer>
-    <?php endif; ?>
-
   </div><!-- /.l-wrapper -->
+
+  <?php if ($content['footer']): ?>
+    <footer class="l-footer"  role="footer">
+      <div class="l-footer-inner container container-fluid">
+        <?php print $content['footer']; ?>
+      </div>
+    </footer>
+  <?php endif; ?>
 </div><!-- /.layout--moscone -->

@@ -29,11 +29,15 @@ function layout_list_page() {
     $row = array();
     // Default layouts have a null path.
     if ($path === '') {
-      $row[] = array('data' => t('Default layouts (used on all paths without a specific layout)'), 'colspan' => 2);
+      $row[] = array('data' => t('Default layouts (used on all paths without a specific layout)'));
+      $row[] = '';
+      $row[] = '';
     }
     else {
       $path_link = strpos($path, '%') === FALSE ? l($path, $path) : check_plain($path);
-      $row[] = array('data' => $path_link, 'colspan' => 2);
+      $row[] = array('data' => $path_link);
+      $row[] = '';
+      $row[] = '';
     }
     $row[] = backdrop_render($operations);
     $rows[] = array('data' => $row, 'class' => array('layout-group'));
@@ -52,8 +56,10 @@ function layout_list_page() {
       else {
         $storage = t('Custom');
       }
+
       $row = array();
       $row[] = theme('layout_info', array('layout' => $layout));
+      $row[] = theme('layout_condition_info', array('layout' => $layout));
       $row[] = $storage;
       $row[] = backdrop_render($operations);
       $class = array('layout-row');
@@ -65,7 +71,8 @@ function layout_list_page() {
   }
 
   $header = array(
-    array('data' => t('Layout and path'), 'class' => array('layout-title')),
+    array('data' => t('Path and layout'), 'class' => array('layout-title')),
+    array('data' => t('Visibility conditions'), 'class' => array('layout-conditions', 'priority-low')),
     array('data' => t('Storage state'), 'class' => array('layout-status', 'priority-low')),
     array('data' => t('Operations'), 'class' => array('layout-operations')),
   );
@@ -97,6 +104,10 @@ function _layout_get_operations(Layout $layout) {
   $links['edit'] = array(
     'title' => t('Edit'),
     'href' => 'admin/structure/layouts/manage/' . $layout->name,
+  );
+  $links['settings'] = array(
+    'title' => t('Settings'),
+    'href' => 'admin/structure/layouts/manage/' . $layout->name . '/settings',
   );
   if (!$layout->isDefault()) {
     $links['clone'] = array(
@@ -232,12 +243,12 @@ function layout_settings_form($form, &$form_state, Layout $layout) {
 
   // Get the list of layout template options.
   $all_template_info = layout_get_layout_template_info();
+  $excluded = config_get('layout.settings', 'excluded_templates');
+  //dpm($excluded);
   foreach ($all_template_info as $template_name => $template_info) {
-    // Don't reveal hidden layouts.
-    if ($template_info['hidden']) {
-      continue;
+    if (!in_array($template_name, $excluded)) {
+      $form['layout_template']['#options'][$template_name] = theme('layout_template_option', array('template_info' => $template_info));
     }
-    $form['layout_template']['#options'][$template_name] = theme('layout_template_options', array('template_info' => $template_info));
   }
 
   $form['path'] = array(
@@ -761,7 +772,7 @@ function layout_content_form($form, &$form_state, Layout $layout, $renderer_name
   $form['title_display']['#tree'] = FALSE;
   $form['title_display']['title_display'] = array(
     '#type' => 'select',
-    '#title' => t('Block title type'),
+    '#title' => t('Page title type'),
     '#default_value' => $layout->settings['title_display'],
     '#options' => array(
       LAYOUT_TITLE_DEFAULT => t('Default title'),
@@ -2437,6 +2448,83 @@ function layout_ajax_form_update($form, $form_state) {
   }
 
   return array('#type' => 'ajax', '#commands' => $commands);
+}
+
+/**
+ * Administrative form for layout settings.
+ */
+function layout_settings_page($form, &$form_state) {
+  $excluded = config_get('layout.settings', 'excluded_templates');
+  //dpm($excluded);
+
+  $form = array();
+
+  $form['#attached']['js'][] = backdrop_get_path('module', 'layout') . '/js/layout.admin.js';
+  $form['#attached']['css'][] = backdrop_get_path('module', 'layout') . '/css/layout.admin.css';
+  $form['#attributes']['class'] = array('layout-settings-page');
+
+  // Get the list of layout template options.
+  $all_layout_info = layout_get_layout_template_info();
+  $options = array();
+  $default = array();
+  foreach ($all_layout_info as $template_name => $template_info) {
+    if (!in_array($template_name, $excluded)) {
+      $default[] = $template_name;
+    }
+    if (!($template_info['hidden'] && !in_array($template_name, $default))) {
+      $options[$template_name] = theme('layout_template_option', array('template_info' => $template_info));
+    }
+  }
+
+  $form['templates'] = array(
+    '#title' => t('Available layout templates'),
+    '#description' => t('Only templates that are selected here will be available when configuring layouts.'),
+    '#type' => 'checkboxes',
+    '#default_value' => $default,
+    '#options' => $options,
+    '#wrapper_attributes' => array('class' => array('clearfix', 'layout-options')),
+  );
+
+  $form['actions']['#type'] = 'actions';
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save configuration'),
+  );
+
+  return $form;
+}
+
+/**
+ * Validation for layout settings page.
+ *
+ * Ensures that active layouts are not disabled while in use.
+ */
+function layout_settings_page_validate(&$form, &$form_state) {
+  $options = array_keys($form_state['values']['templates']);
+  $included = array_values($form_state['values']['templates']);
+  $excluded = array_unique(array_diff($options, $included));
+  $form_state['excluded_templates'] = array_values($excluded);
+
+  // Ensure all layouts are not disabled.
+  if (empty($form_state['values']['templates'])) {
+    form_set_error('templates', t('At least one layout template must be enabled.'));
+  }
+
+  // Check which layout templates are in use.
+  foreach (layout_load_all() as $layout) {
+    $info = layout_get_layout_template_info($layout->layout_template);
+    if (in_array($layout->layout_template, $excluded)) {
+      form_set_error('templates', t('The "@layout" layout template is currently in use and may not be excluded.', array('@layout' => $info['title'])));
+    }
+  }
+}
+
+/**
+ * Submit handler for layout advanced settings page.
+ */
+function layout_settings_page_submit($form, &$form_state) {
+  config_set('layout.settings', 'excluded_templates', $form_state['excluded_templates']);
+  backdrop_set_message(t('Your configuration has been saved.'));
 }
 
 /**

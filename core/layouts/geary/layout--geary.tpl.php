@@ -20,7 +20,6 @@
  *   - $content['third1']
  *   - $content['third2']
  *   - $content['third3']
- *   - $content['content']
  *   - $content['bottom']
  *   - $content['footer']
  */
@@ -57,7 +56,7 @@
       </div>
 
       <?php if ($tabs): ?>
-        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin content navigation tabs.'); ?>">
           <?php print $tabs; ?>
         </nav>
       <?php endif; ?>
@@ -70,20 +69,14 @@
         </div>
       <?php endif; ?>
 
-      <?php if (!empty($content['content'])): ?>
-        <div class="l-content" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php print $content['content']; ?>
-      </div>
-      <?php endif; ?>
-
       <div class="l-middle l-thirds row">
-        <div class="l-thirds-region col-md-4 col-md-first">
+        <div class="l-thirds-region col-md-4">
           <?php print $content['third1']; ?>
         </div>
-        <div class="l-thirds-region col-md-4 col-xs-first col-sm-first">
+        <div class="l-thirds-region col-md-4">
           <?php print $content['third2']; ?>
         </div>
-        <div class="l-thirds-region col-md-4 col-xs-last col-sm-last">
+        <div class="l-thirds-region col-md-4">
           <?php print $content['third3']; ?>
         </div>
       </div><!-- /.l-middle -->
@@ -95,14 +88,13 @@
       <?php endif; ?>
 
     </div><!-- /.l-wrapper-inner -->
-
-    <?php if ($content['footer']): ?>
-      <footer class="l-footer"  role="footer">
-        <div class="l-footer-inner container container-fluid">
-          <?php print $content['footer']; ?>
-        </div><!-- /.container -->
-      </footer>
-    <?php endif; ?>
-
   </div><!-- /.l-wrapper -->
+
+  <?php if ($content['footer']): ?>
+    <footer class="l-footer"  role="footer">
+      <div class="l-footer-inner container container-fluid">
+        <?php print $content['footer']; ?>
+      </div><!-- /.container -->
+    </footer>
+  <?php endif; ?>
 </div><!-- /.layout--geary -->

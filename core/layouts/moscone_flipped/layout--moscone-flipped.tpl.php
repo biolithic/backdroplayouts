@@ -17,8 +17,8 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['top']
- *   - $content['sidebar']
  *   - $content['content']
+ *   - $content['sidebar']
  *   - $content['bottom']
  *   - $content['footer']
  */
@@ -55,7 +55,7 @@
       </div>
 
       <?php if ($tabs): ?>
-        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin content navigation tabs.'); ?>">
           <?php print $tabs; ?>
         </nav>
       <?php endif; ?>
@@ -84,14 +84,13 @@
       <?php endif; ?>
 
     </div><!-- /.l-wrapper-inner -->
-
-    <?php if ($content['footer']): ?>
-      <footer class="l-footer"  role="footer">
-        <div class="l-footer-inner container container-fluid">
-          <?php print $content['footer']; ?>
-        </div>
-      </footer>
-    <?php endif; ?>
-
   </div><!-- /.l-wrapper -->
+
+  <?php if ($content['footer']): ?>
+    <footer class="l-footer"  role="footer">
+      <div class="l-footer-inner container container-fluid">
+        <?php print $content['footer']; ?>
+      </div>
+    </footer>
+  <?php endif; ?>
 </div><!-- /.layout--moscone-flipped -->

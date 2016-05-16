@@ -1,7 +1,7 @@
+type = layout
 name = Harris
 version = BACKDROP_VERSION
 backdrop = 1.x
-type = layout
 
 ; Specify regions for this layout.
 regions[header]     = Header

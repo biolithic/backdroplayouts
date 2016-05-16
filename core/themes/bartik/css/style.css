@@ -283,6 +283,7 @@ ul.tips {
 /* All layouts */
 .l-container,
 .l-top,
+.l-wrapper,
 .l-bottom,
 .l-messages,
 
@@ -325,6 +326,7 @@ ul.tips {
   padding-top: 33px;
   margin-top: -33px;
 }
+.l-wrapper,
 .l-container,
 .l-triptych {
   -webkit-flex: 1 0 auto;

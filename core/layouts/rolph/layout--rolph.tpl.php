@@ -17,7 +17,6 @@
  *   region of the layout. This layout supports the following sections:
  *   - $content['header']
  *   - $content['top']
- *   - $content['content']
  *   - $content['quarter1']
  *   - $content['quarter2']
  *   - $content['quarter3']
@@ -58,7 +57,7 @@
       </div>
 
       <?php if ($tabs): ?>
-        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin Content Navigation Tabs'); ?>">
+        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin content navigation tabs.'); ?>">
           <?php print $tabs; ?>
         </nav>
       <?php endif; ?>
@@ -68,12 +67,6 @@
       <?php if (!empty($content['top'])): ?>
         <div class="l-top">
           <?php print $content['top']; ?>
-        </div>
-      <?php endif; ?>
-
-       <?php if (!empty($content['content'])): ?>
-        <div class="l-content" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php print $content['content']; ?>
         </div>
       <?php endif; ?>
 
@@ -99,14 +92,13 @@
       <?php endif; ?>
 
     </div><!-- /.l-wrapper-inner -->
-
-    <?php if ($content['footer']): ?>
-      <footer class="l-footer"  role="footer">
-        <div class="l-footer-inner container container-fluid">
-          <?php print $content['footer']; ?>
-        </div>
-      </footer>
-    <?php endif; ?>
-
   </div><!-- /.l-wrapper -->
+
+  <?php if ($content['footer']): ?>
+    <footer class="l-footer"  role="footer">
+      <div class="l-footer-inner container container-fluid">
+        <?php print $content['footer']; ?>
+      </div>
+    </footer>
+  <?php endif; ?>
 </div><!-- /.layout--rolph -->

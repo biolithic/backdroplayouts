@@ -1,12 +1,11 @@
+type = layout
 name = Rolph
 version = BACKDROP_VERSION
 backdrop = 1.x
-type = layout
 
 ; Specify regions for this layout.
 regions[header]     = Header
 regions[top]        = Top
-regions[content]    = Content
 regions[quarter1]   = First Column
 regions[quarter2]   = Second Column
 regions[quarter3]   = Third Column

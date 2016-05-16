@@ -89,37 +89,7 @@
           <?php print $content['sidebar2']; ?>
         </div>
       </div><!-- /.l-middle -->
-
-      <?php if ($content['third1'] || $content['third2'] || $content['third3']): ?>
-        <div class="l-thirds row">
-          <div class="l-thirds-region col-md-4">
-            <?php print $content['third1']; ?>
-          </div>
-          <div class="l-thirds-region col-md-4">
-            <?php print $content['third2']; ?>
-          </div>
-          <div class="l-thirds-region col-md-4">
-            <?php print $content['third3']; ?>
-          </div>
-        </div><!-- /.l-thirds -->
-      <?php endif; ?>
-
-      <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
-        <div class="l-quarters row">
-          <div class="l-quarters-region col-md-3">
-            <?php print $content['quarter1']; ?>
-          </div>
-          <div class="l-quarters-region col-md-3">
-            <?php print $content['quarter2']; ?>
-          </div>
-          <div class="l-quarters-region col-md-3">
-            <?php print $content['quarter3']; ?>
-          </div>
-          <div class="l-quarters-region col-md-3">
-            <?php print $content['quarter4']; ?>
-          </div>
-        </div><!-- /.l-quarters -->
-      <?php endif; ?>
+      
 
       <?php if (!empty($content['bottom'])): ?>
         <div class="l-bottom">
@@ -130,11 +100,50 @@
     </div><!-- /.l-wrapper-inner -->
   </div><!-- /.l-wrapper -->
 
-  <?php if ($content['footer']): ?>
-    <footer class="l-footer"  role="footer">
+  <?php if ($content['third1'] || $content['third2'] || $content['third3']): ?>
+    <div class="l-triptych-wrapper">
+      <div class="l-triptych container container-fluid">
+        <div class="l-thirds row">
+          <div class="l-triptych-first l-thirds-region col-md-4">
+            <?php print $content['third1']; ?>
+          </div>
+          <div class="l-triptych-middle l-thirds-region col-md-4">
+            <?php print $content['third2']; ?>
+          </div>
+          <div class="l-triptych-last l-thirds-region col-md-4">
+            <?php print $content['third3']; ?>
+          </div>
+        </div><!-- /.l-thirds -->
+      </div><!-- /.l-triptych -->
+    </div><!-- /.l-triptych-wrapper -->
+  <?php endif; ?>
+
+  <?php if ($content['footer'] || $content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
+    <div class="l-footer-wrapper">
       <div class="l-footer-inner container container-fluid">
-        <?php print $content['footer']; ?>
-      </div>
-    </footer>
+        <?php if ($content['quarter1'] || $content['quarter2'] || $content['quarter3'] || $content['quarter4']): ?>
+          <div class="l-footer-columns l-quarters row">
+            <div class="l-footer-first-column l-quarters-region col-md-3">
+              <?php print $content['quarter1']; ?>
+            </div>
+            <div class="l-footer-second-column l-quarters-region col-md-3">
+              <?php print $content['quarter2']; ?>
+            </div>
+            <div class="l-footer-third-column l-quarters-region col-md-3">
+              <?php print $content['quarter3']; ?>
+            </div>
+            <div class="l-footer-fourth-column l-quarters-region col-md-3">
+              <?php print $content['quarter4']; ?>
+            </div>
+          </div><!-- /.l-quarters -->
+        <?php endif; ?>
+
+        <?php if ($content['footer']): ?>
+          <footer class="l-footer"  role="footer">
+            <?php print $content['footer']; ?>
+          </footer>
+        <?php endif; ?>
+      </div><!-- /.l-footer-inner -->
+    </div><!-- /.l-footer-wrapper -->
   <?php endif; ?>
 </div><!-- /.layout--simmons -->
